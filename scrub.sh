@@ -1,0 +1,1 @@
+zpool scrub HDD
