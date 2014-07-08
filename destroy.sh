@@ -1,1 +1,1 @@
-zpool destroy HDD 
+zpool destroy tank 
