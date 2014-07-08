@@ -1,0 +1,627 @@
+version = 6
+CPU 0 is empty
+CPU 1 is empty
+CPU 2 is empty
+CPU 3 is empty
+CPU 4 is empty
+CPU 5 is empty
+CPU 7 is empty
+CPU 9 is empty
+CPU 11 is empty
+cpus=12
+       trace-cmd-21873 [010] 43132.290842: funcgraph_entry:        4.245 us   |  zpl_show_options();
+       trace-cmd-21874 [006] 43132.290850: funcgraph_entry:        2.788 us   |  zpl_show_options();
+              dd-21875 [008] 43132.291863: funcgraph_entry:        2.502 us   |  zpl_revalidate();
+              dd-21875 [008] 43132.291867: funcgraph_entry:                   |  zpl_open() {
+              dd-21875 [008] 43132.291868: funcgraph_entry:                   |    zfs_open() {
+              dd-21875 [008] 43132.291869: funcgraph_entry:        0.630 us   |      rrw_enter_read();
+              dd-21875 [008] 43132.291870: funcgraph_entry:        0.832 us   |      rrw_exit();
+              dd-21875 [008] 43132.291872: funcgraph_exit:         4.191 us   |    }
+              dd-21875 [008] 43132.291873: funcgraph_exit:         5.724 us   |  }
+              dd-21875 [008] 43132.291881: funcgraph_entry:        0.839 us   |  zpl_llseek();
+              dd-21875 [008] 43132.291901: funcgraph_entry:                   |  zpl_read() {
+              dd-21875 [008] 43132.291902: funcgraph_entry:                   |    zpl_read_common() {
+              dd-21875 [008] 43132.291903: funcgraph_entry:                   |      zfs_read() {
+              dd-21875 [008] 43132.291903: funcgraph_entry:        0.500 us   |        rrw_enter_read();
+              dd-21875 [008] 43132.291904: funcgraph_entry:        2.629 us   |        zfs_range_lock();
+              dd-21875 [008] 43132.291908: funcgraph_entry:                   |        dmu_read_uio() {
+              dd-21875 [008] 43132.291909: funcgraph_entry:                   |          dmu_buf_hold_array() {
+              dd-21875 [008] 43132.291909: funcgraph_entry:                   |            dnode_hold() {
+              dd-21875 [008] 43132.291910: funcgraph_entry:                   |              dnode_hold_impl() {
+              dd-21875 [008] 43132.291911: funcgraph_entry:        0.420 us   |                dbuf_whichblock();
+              dd-21875 [008] 43132.291912: funcgraph_entry:                   |                dbuf_hold() {
+              dd-21875 [008] 43132.291912: funcgraph_entry:                   |                  dbuf_hold_impl() {
+              dd-21875 [008] 43132.291914: funcgraph_entry:                   |                    __dbuf_hold_impl() {
+              dd-21875 [008] 43132.291914: funcgraph_entry:                   |                      dbuf_find() {
+              dd-21875 [008] 43132.291915: funcgraph_entry:        0.897 us   |                        dbuf_hash();
+              dd-21875 [008] 43132.291917: funcgraph_exit:         2.556 us   |                      }
+              dd-21875 [008] 43132.291918: funcgraph_exit:         3.915 us   |                    }
+              dd-21875 [008] 43132.291919: funcgraph_exit:         6.417 us   |                  }
+              dd-21875 [008] 43132.291919: funcgraph_exit:         7.352 us   |                }
+              dd-21875 [008] 43132.291920: funcgraph_entry:        0.555 us   |                RW_WRITE_HELD();
+              dd-21875 [008] 43132.291921: funcgraph_entry:                   |                dbuf_read() {
+              dd-21875 [008] 43132.291921: funcgraph_entry:        0.596 us   |                  zrl_add();
+              dd-21875 [008] 43132.291923: funcgraph_entry:        1.489 us   |                  dmu_zfetch();
+              dd-21875 [008] 43132.291925: funcgraph_entry:        0.584 us   |                  RW_WRITE_HELD();
+              dd-21875 [008] 43132.291926: funcgraph_entry:        0.413 us   |                  zrl_remove();
+              dd-21875 [008] 43132.291927: funcgraph_exit:         6.101 us   |                }
+              dd-21875 [008] 43132.291927: funcgraph_entry:        0.410 us   |                dmu_buf_get_user();
+              dd-21875 [008] 43132.291928: funcgraph_entry:        0.536 us   |                zrl_add();
+              dd-21875 [008] 43132.291930: funcgraph_entry:        0.427 us   |                zrl_remove();
+              dd-21875 [008] 43132.291931: funcgraph_entry:                   |                dmu_buf_rele() {
+              dd-21875 [008] 43132.291931: funcgraph_entry:        0.616 us   |                  dbuf_rele_and_unlock();
+              dd-21875 [008] 43132.291932: funcgraph_exit:         1.554 us   |                }
+              dd-21875 [008] 43132.291932: funcgraph_exit:       + 22.732 us  |              }
+              dd-21875 [008] 43132.291933: funcgraph_exit:       + 23.621 us  |            }
+              dd-21875 [008] 43132.291933: funcgraph_entry:                   |            dmu_buf_hold_array_by_dnode() {
+              dd-21875 [008] 43132.291934: funcgraph_entry:                   |              zio_root() {
+              dd-21875 [008] 43132.291935: funcgraph_entry:                   |                zio_null() {
+              dd-21875 [008] 43132.291935: funcgraph_entry:        2.922 us   |                  zio_create();
+              dd-21875 [008] 43132.291939: funcgraph_exit:         3.934 us   |                }
+              dd-21875 [008] 43132.291939: funcgraph_exit:         4.805 us   |              }
+              dd-21875 [008] 43132.291940: funcgraph_entry:        0.413 us   |              dbuf_whichblock();
+              dd-21875 [008] 43132.291940: funcgraph_entry:                   |              dbuf_hold() {
+              dd-21875 [008] 43132.291941: funcgraph_entry:                   |                dbuf_hold_impl() {
+              dd-21875 [008] 43132.291942: funcgraph_entry:                   |                  __dbuf_hold_impl() {
+              dd-21875 [008] 43132.291942: funcgraph_entry:                   |                    dbuf_find() {
+              dd-21875 [008] 43132.291942: funcgraph_entry:        0.626 us   |                      dbuf_hash();
+              dd-21875 [008] 43132.291944: funcgraph_exit:         1.986 us   |                    }
+              dd-21875 [008] 43132.291945: funcgraph_entry:                   |                    arc_buf_add_ref() {
+              dd-21875 [008] 43132.291947: funcgraph_entry:        0.916 us   |                      add_reference();
+              dd-21875 [008] 43132.291948: funcgraph_entry:                   |                      arc_access() {
+              dd-21875 [008] 43132.291949: funcgraph_entry:        0.640 us   |                        arc_change_state();
+              dd-21875 [008] 43132.291950: funcgraph_exit:         1.906 us   |                      }
+              dd-21875 [008] 43132.291950: funcgraph_exit:         5.678 us   |                    }
+              dd-21875 [008] 43132.291951: funcgraph_exit:         9.398 us   |                  }
+              dd-21875 [008] 43132.291952: funcgraph_exit:       + 10.642 us  |                }
+              dd-21875 [008] 43132.291952: funcgraph_exit:       + 11.528 us  |              }
+              dd-21875 [008] 43132.291953: funcgraph_entry:                   |              dbuf_read() {
+              dd-21875 [008] 43132.291954: funcgraph_entry:        0.484 us   |                zrl_add();
+              dd-21875 [008] 43132.291955: funcgraph_entry:                   |                dmu_zfetch() {
+              dd-21875 [008] 43132.291956: funcgraph_entry:        0.503 us   |                  spl_rw_clear_owner();
+              dd-21875 [008] 43132.291959: funcgraph_entry:        0.542 us   |                  RW_WRITE_HELD();
+              dd-21875 [008] 43132.291960: funcgraph_entry:        0.480 us   |                  spl_rw_clear_owner();
+              dd-21875 [008] 43132.291961: funcgraph_exit:         5.920 us   |                }
+              dd-21875 [008] 43132.291961: funcgraph_entry:        0.457 us   |                zrl_remove();
+              dd-21875 [008] 43132.291962: funcgraph_exit:         9.528 us   |              }
+              dd-21875 [008] 43132.291963: funcgraph_entry:                   |              zio_wait() {
+              dd-21875 [008] 43132.291964: funcgraph_entry:        0.493 us   |                spa_get_dsl();
+              dd-21875 [008] 43132.291965: funcgraph_entry:        0.522 us   |                spa_is_initializing();
+              dd-21875 [008] 43132.291966: funcgraph_entry:                   |                zio_ready() {
+              dd-21875 [008] 43132.291967: funcgraph_entry:        0.492 us   |                  zio_wait_for_children();
+              dd-21875 [008] 43132.291968: funcgraph_entry:        0.437 us   |                  zio_wait_for_children();
+              dd-21875 [008] 43132.291969: funcgraph_entry:        0.452 us   |                  zio_walk_parents();
+              dd-21875 [008] 43132.291970: funcgraph_exit:         3.535 us   |                }
+              dd-21875 [008] 43132.291970: funcgraph_entry:        0.420 us   |                spa_get_dsl();
+              dd-21875 [008] 43132.291971: funcgraph_entry:        0.409 us   |                spa_is_initializing();
+              dd-21875 [008] 43132.291972: funcgraph_entry:                   |                zio_done() {
+              dd-21875 [008] 43132.291972: funcgraph_entry:        0.474 us   |                  zio_wait_for_children();
+              dd-21875 [008] 43132.291973: funcgraph_entry:        0.443 us   |                  zio_wait_for_children();
+              dd-21875 [008] 43132.291974: funcgraph_entry:        0.454 us   |                  zio_wait_for_children();
+              dd-21875 [008] 43132.291975: funcgraph_entry:        0.529 us   |                  zio_wait_for_children();
+              dd-21875 [008] 43132.291976: funcgraph_entry:        0.466 us   |                  zio_pop_transforms();
+              dd-21875 [008] 43132.291978: funcgraph_entry:        0.493 us   |                  vdev_stat_update();
+              dd-21875 [008] 43132.291979: funcgraph_entry:        0.413 us   |                  zio_gang_tree_free();
+              dd-21875 [008] 43132.291980: funcgraph_entry:        0.463 us   |                  zio_walk_parents();
+              dd-21875 [008] 43132.291981: funcgraph_exit:         8.643 us   |                }
+              dd-21875 [008] 43132.291982: funcgraph_exit:       + 18.767 us  |              }
+              dd-21875 [008] 43132.291982: funcgraph_exit:       + 48.849 us  |            }
+              dd-21875 [008] 43132.291983: funcgraph_entry:        0.510 us   |            dnode_rele();
+              dd-21875 [008] 43132.291984: funcgraph_exit:       + 75.113 us  |          }
+              dd-21875 [008] 43132.291989: funcgraph_entry:                   |          dmu_buf_rele_array() {
+              dd-21875 [008] 43132.291990: funcgraph_entry:                   |            dmu_buf_rele() {
+              dd-21875 [008] 43132.291990: funcgraph_entry:                   |              dbuf_rele_and_unlock() {
+              dd-21875 [008] 43132.291991: funcgraph_entry:        0.580 us   |                arc_buf_freeze();
+              dd-21875 [008] 43132.291992: funcgraph_entry:        0.500 us   |                arc_released();
+              dd-21875 [008] 43132.291993: funcgraph_entry:                   |                arc_buf_remove_ref() {
+              dd-21875 [008] 43132.291993: funcgraph_entry:        0.666 us   |                  remove_reference();
+              dd-21875 [008] 43132.291995: funcgraph_exit:         1.846 us   |                }
+              dd-21875 [008] 43132.291995: funcgraph_entry:        0.633 us   |                arc_buf_eviction_needed();
+              dd-21875 [008] 43132.291996: funcgraph_exit:         6.164 us   |              }
+              dd-21875 [008] 43132.291997: funcgraph_exit:         7.064 us   |            }
+              dd-21875 [008] 43132.291997: funcgraph_exit:         8.233 us   |          }
+              dd-21875 [008] 43132.291998: funcgraph_exit:       + 89.557 us  |        }
+              dd-21875 [008] 43132.291998: funcgraph_entry:        1.203 us   |        zfs_range_unlock();
+              dd-21875 [008] 43132.292000: funcgraph_entry:        0.493 us   |        zfs_is_readonly();
+              dd-21875 [008] 43132.292001: funcgraph_entry:        0.802 us   |        zfs_tstamp_update_setup();
+              dd-21875 [008] 43132.292003: funcgraph_entry:        0.510 us   |        rrw_exit();
+              dd-21875 [008] 43132.292004: funcgraph_exit:       ! 101.244 us |      }
+              dd-21875 [008] 43132.292004: funcgraph_exit:       ! 102.294 us |    }
+              dd-21875 [008] 43132.292005: funcgraph_exit:       ! 103.513 us |  }
+              dd-21875 [008] 43132.292008: funcgraph_entry:                   |  zpl_read() {
+              dd-21875 [008] 43132.292008: funcgraph_entry:                   |    zpl_read_common() {
+              dd-21875 [008] 43132.292009: funcgraph_entry:                   |      zfs_read() {
+              dd-21875 [008] 43132.292010: funcgraph_entry:        0.483 us   |        rrw_enter_read();
+              dd-21875 [008] 43132.292011: funcgraph_entry:        0.794 us   |        zfs_range_lock();
+              dd-21875 [008] 43132.292012: funcgraph_entry:        0.709 us   |        zfs_range_unlock();
+              dd-21875 [008] 43132.292013: funcgraph_entry:        0.410 us   |        zfs_is_readonly();
+              dd-21875 [008] 43132.292014: funcgraph_entry:        0.479 us   |        zfs_tstamp_update_setup();
+              dd-21875 [008] 43132.292015: funcgraph_entry:        0.483 us   |        rrw_exit();
+              dd-21875 [008] 43132.292016: funcgraph_exit:         6.981 us   |      }
+              dd-21875 [008] 43132.292016: funcgraph_exit:         7.823 us   |    }
+              dd-21875 [008] 43132.292017: funcgraph_exit:         8.782 us   |  }
+              dd-21875 [008] 43132.292019: funcgraph_entry:                   |  zpl_release() {
+              dd-21875 [008] 43132.292020: funcgraph_entry:                   |    zpl_dirty_inode() {
+              dd-21875 [008] 43132.292020: funcgraph_entry:                   |      zfs_dirty_inode() {
+              dd-21875 [008] 43132.292020: funcgraph_entry:        0.456 us   |        rrw_enter_read();
+              dd-21875 [008] 43132.292021: funcgraph_entry:                   |        dmu_tx_create() {
+              dd-21875 [008] 43132.292022: funcgraph_entry:        1.199 us   |          dmu_tx_create_dd();
+              dd-21875 [008] 43132.292024: funcgraph_entry:                   |          dsl_dataset_prev_snap_txg() {
+              dd-21875 [008] 43132.292024: funcgraph_entry:        0.489 us   |            spa_last_synced_txg();
+              dd-21875 [008] 43132.292025: funcgraph_exit:         1.529 us   |          }
+              dd-21875 [008] 43132.292026: funcgraph_exit:         4.318 us   |        }
+              dd-21875 [008] 43132.292026: funcgraph_entry:                   |        dmu_tx_hold_sa() {
+              dd-21875 [008] 43132.292027: funcgraph_entry:        0.607 us   |          sa_handle_object();
+              dd-21875 [008] 43132.292028: funcgraph_entry:                   |          dmu_tx_hold_bonus() {
+              dd-21875 [008] 43132.292028: funcgraph_entry:                   |            dmu_tx_hold_object_impl() {
+              dd-21875 [008] 43132.292029: funcgraph_entry:                   |              dnode_hold() {
+              dd-21875 [008] 43132.292029: funcgraph_entry:                   |                dnode_hold_impl() {
+              dd-21875 [008] 43132.292030: funcgraph_entry:        0.414 us   |                  dbuf_whichblock();
+              dd-21875 [008] 43132.292031: funcgraph_entry:                   |                  dbuf_hold() {
+              dd-21875 [008] 43132.292031: funcgraph_entry:                   |                    dbuf_hold_impl() {
+              dd-21875 [008] 43132.292032: funcgraph_entry:                   |                      __dbuf_hold_impl() {
+              dd-21875 [008] 43132.292032: funcgraph_entry:                   |                        dbuf_find() {
+              dd-21875 [008] 43132.292033: funcgraph_entry:        0.460 us   |                          dbuf_hash();
+              dd-21875 [008] 43132.292034: funcgraph_exit:         1.409 us   |                        }
+              dd-21875 [008] 43132.292034: funcgraph_exit:         2.336 us   |                      }
+              dd-21875 [008] 43132.292035: funcgraph_exit:         3.658 us   |                    }
+              dd-21875 [008] 43132.292035: funcgraph_exit:         4.481 us   |                  }
+              dd-21875 [008] 43132.292035: funcgraph_entry:        0.520 us   |                  RW_WRITE_HELD();
+              dd-21875 [008] 43132.292036: funcgraph_entry:                   |                  dbuf_read() {
+              dd-21875 [008] 43132.292037: funcgraph_entry:        0.480 us   |                    zrl_add();
+              dd-21875 [008] 43132.292038: funcgraph_entry:        0.716 us   |                    dmu_zfetch();
+              dd-21875 [008] 43132.292039: funcgraph_entry:        0.524 us   |                    RW_WRITE_HELD();
+              dd-21875 [008] 43132.292040: funcgraph_entry:        0.426 us   |                    zrl_remove();
+              dd-21875 [008] 43132.292041: funcgraph_exit:         4.597 us   |                  }
+              dd-21875 [008] 43132.292042: funcgraph_entry:        0.407 us   |                  dmu_buf_get_user();
+              dd-21875 [008] 43132.292042: funcgraph_entry:        0.446 us   |                  zrl_add();
+              dd-21875 [008] 43132.292044: funcgraph_entry:        0.470 us   |                  zrl_remove();
+              dd-21875 [008] 43132.292044: funcgraph_entry:                   |                  dmu_buf_rele() {
+              dd-21875 [008] 43132.292045: funcgraph_entry:        0.467 us   |                    dbuf_rele_and_unlock();
+              dd-21875 [008] 43132.292046: funcgraph_exit:         1.305 us   |                  }
+              dd-21875 [008] 43132.292046: funcgraph_exit:       + 16.962 us  |                }
+              dd-21875 [008] 43132.292047: funcgraph_exit:       + 17.869 us  |              }
+              dd-21875 [008] 43132.292047: funcgraph_exit:       + 19.157 us  |            }
+              dd-21875 [008] 43132.292048: funcgraph_entry:                   |            dmu_tx_count_dnode() {
+              dd-21875 [008] 43132.292049: funcgraph_entry:                   |              dsl_dataset_block_freeable() {
+              dd-21875 [008] 43132.292049: funcgraph_entry:                   |                dsl_dataset_prev_snap_txg() {
+              dd-21875 [008] 43132.292050: funcgraph_entry:        0.414 us   |                  spa_last_synced_txg();
+              dd-21875 [008] 43132.292051: funcgraph_exit:         1.253 us   |                }
+              dd-21875 [008] 43132.292051: funcgraph_entry:        0.677 us   |                ddt_prefetch();
+              dd-21875 [008] 43132.292052: funcgraph_exit:         3.335 us   |              }
+              dd-21875 [008] 43132.292053: funcgraph_exit:         4.514 us   |            }
+              dd-21875 [008] 43132.292053: funcgraph_exit:       + 25.184 us  |          }
+              dd-21875 [008] 43132.292054: funcgraph_entry:        0.436 us   |          dmu_tx_sa_registration_hold();
+              dd-21875 [008] 43132.292055: funcgraph_entry:        0.450 us   |          zrl_add();
+              dd-21875 [008] 43132.292056: funcgraph_entry:        0.427 us   |          zrl_remove();
+              dd-21875 [008] 43132.292057: funcgraph_exit:       + 30.765 us  |        }
+              dd-21875 [008] 43132.292058: funcgraph_entry:        0.524 us   |        zfs_sa_upgrade_txholds();
+              dd-21875 [008] 43132.292059: funcgraph_entry:                   |        dmu_tx_assign() {
+              dd-21875 [008] 43132.292059: funcgraph_entry:        0.499 us   |          spa_suspended();
+              dd-21875 [008] 43132.292060: funcgraph_entry:        0.600 us   |          dsl_pool_need_dirty_delay();
+              dd-21875 [008] 43132.292061: funcgraph_entry:        1.086 us   |          txg_hold_open();
+              dd-21875 [008] 43132.292063: funcgraph_entry:                   |          dsl_dataset_prev_snap_txg() {
+              dd-21875 [008] 43132.292063: funcgraph_entry:        0.406 us   |            spa_last_synced_txg();
+              dd-21875 [008] 43132.292064: funcgraph_exit:         1.275 us   |          }
+              dd-21875 [008] 43132.292065: funcgraph_entry:        0.467 us   |          spa_get_asize();
+              dd-21875 [008] 43132.292066: funcgraph_entry:        0.404 us   |          spa_get_asize();
+              dd-21875 [008] 43132.292066: funcgraph_entry:        0.396 us   |          spa_get_asize();
+              dd-21875 [008] 43132.292067: funcgraph_entry:                   |          dsl_dir_tempreserve_space() {
+              dd-21875 [008] 43132.292068: funcgraph_entry:        0.660 us   |            arc_tempreserve_space();
+              dd-21875 [008] 43132.292069: funcgraph_entry:                   |            dsl_dir_tempreserve_impl() {
+              dd-21875 [008] 43132.292070: funcgraph_entry:        0.610 us   |              dsl_dataset_check_quota();
+              dd-21875 [008] 43132.292071: funcgraph_entry:                   |              dsl_pool_adjustedsize() {
+              dd-21875 [008] 43132.292072: funcgraph_entry:        0.486 us   |                spa_get_dspace();
+              dd-21875 [008] 43132.292073: funcgraph_exit:         1.339 us   |              }
+              dd-21875 [008] 43132.292073: funcgraph_entry:        0.416 us   |              spa_normal_class();
+              dd-21875 [008] 43132.292074: funcgraph_entry:        0.486 us   |              metaslab_class_get_deferred();
+              dd-21875 [008] 43132.292075: funcgraph_exit:         6.007 us   |            }
+              dd-21875 [008] 43132.292076: funcgraph_exit:         8.516 us   |          }
+              dd-21875 [008] 43132.292076: funcgraph_entry:        0.427 us   |          txg_rele_to_quiesce();
+              dd-21875 [008] 43132.292077: funcgraph_exit:       + 18.658 us  |        }
+              dd-21875 [008] 43132.292078: funcgraph_entry:                   |        sa_bulk_update() {
+              dd-21875 [008] 43132.292078: funcgraph_entry:                   |          sa_bulk_update_impl() {
+              dd-21875 [008] 43132.292079: funcgraph_entry:                   |            dmu_get_bonustype() {
+              dd-21875 [008] 43132.292079: funcgraph_entry:        0.415 us   |              zrl_add();
+              dd-21875 [008] 43132.292080: funcgraph_entry:        0.414 us   |              zrl_remove();
+              dd-21875 [008] 43132.292081: funcgraph_exit:         2.113 us   |            }
+              dd-21875 [008] 43132.292082: funcgraph_entry:                   |            sa_attr_op() {
+              dd-21875 [008] 43132.292083: funcgraph_entry:                   |              dmu_buf_will_dirty() {
+              dd-21875 [008] 43132.292083: funcgraph_entry:        0.414 us   |                zrl_add();
+              dd-21875 [008] 43132.292084: funcgraph_entry:        0.407 us   |                zrl_remove();
+              dd-21875 [008] 43132.292085: funcgraph_entry:                   |                dbuf_read() {
+              dd-21875 [008] 43132.292085: funcgraph_entry:        0.419 us   |                  zrl_add();
+              dd-21875 [008] 43132.292086: funcgraph_entry:        0.534 us   |                  RW_WRITE_HELD();
+              dd-21875 [008] 43132.292087: funcgraph_entry:        0.466 us   |                  zrl_remove();
+              dd-21875 [008] 43132.292088: funcgraph_exit:         3.435 us   |                }
+              dd-21875 [008] 43132.292089: funcgraph_entry:                   |                dbuf_dirty() {
+              dd-21875 [008] 43132.292089: funcgraph_entry:        0.407 us   |                  zrl_add();
+              dd-21875 [008] 43132.292091: funcgraph_entry:        0.423 us   |                  dbuf_fix_old_data();
+              dd-21875 [008] 43132.292092: funcgraph_entry:        0.496 us   |                  dmu_buf_add_ref();
+              dd-21875 [008] 43132.292093: funcgraph_entry:                   |                  dnode_setdirty() {
+              dd-21875 [008] 43132.292093: funcgraph_entry:                   |                    dmu_objset_userquota_get_ids() {
+              dd-21875 [008] 43132.292094: funcgraph_entry:                   |                      dmu_objset_userused_enabled() {
+              dd-21875 [008] 43132.292094: funcgraph_entry:        0.427 us   |                        spa_version();
+              dd-21875 [008] 43132.292096: funcgraph_exit:         1.703 us   |                      }
+              dd-21875 [008] 43132.292096: funcgraph_exit:         2.668 us   |                    }
+              dd-21875 [008] 43132.292097: funcgraph_entry:        0.537 us   |                    dnode_add_ref();
+              dd-21875 [008] 43132.292098: funcgraph_entry:                   |                    dbuf_dirty() {
+              dd-21875 [008] 43132.292098: funcgraph_entry:        0.440 us   |                      zrl_add();
+              dd-21875 [008] 43132.292099: funcgraph_entry:                   |                      dnode_willuse_space() {
+              dd-21875 [008] 43132.292100: funcgraph_entry:        0.779 us   |                        spa_get_asize();
+              dd-21875 [008] 43132.292101: funcgraph_entry:                   |                        dsl_dir_willuse_space() {
+              dd-21875 [008] 43132.292102: funcgraph_entry:                   |                          dsl_dir_dirty() {
+              dd-21875 [008] 43132.292102: funcgraph_entry:        0.560 us   |                            txg_list_add();
+              dd-21875 [008] 43132.292103: funcgraph_entry:        0.550 us   |                            dmu_buf_add_ref();
+              dd-21875 [008] 43132.292104: funcgraph_exit:         2.548 us   |                          }
+              dd-21875 [008] 43132.292105: funcgraph_exit:         3.601 us   |                        }
+              dd-21875 [008] 43132.292105: funcgraph_entry:        0.423 us   |                        dmu_tx_pool();
+              dd-21875 [008] 43132.292106: funcgraph_entry:        0.679 us   |                        dsl_pool_dirty_space();
+              dd-21875 [008] 43132.292107: funcgraph_entry:        0.407 us   |                        dmu_tx_willuse_space();
+              dd-21875 [008] 43132.292108: funcgraph_exit:         8.606 us   |                      }
+              dd-21875 [008] 43132.292108: funcgraph_entry:                   |                      dsl_dataset_block_freeable() {
+              dd-21875 [008] 43132.292109: funcgraph_entry:                   |                        dsl_dataset_prev_snap_txg() {
+              dd-21875 [008] 43132.292109: funcgraph_entry:        0.416 us   |                          spa_last_synced_txg();
+              dd-21875 [008] 43132.292110: funcgraph_exit:         1.230 us   |                        }
+              dd-21875 [008] 43132.292111: funcgraph_entry:        0.410 us   |                        ddt_prefetch();
+              dd-21875 [008] 43132.292111: funcgraph_exit:         2.889 us   |                      }
+              dd-21875 [008] 43132.292112: funcgraph_entry:        0.766 us   |                      dnode_clear_range();
+              dd-21875 [008] 43132.292113: funcgraph_entry:        0.423 us   |                      dmu_buf_add_ref();
+              dd-21875 [008] 43132.292115: funcgraph_entry:                   |                      bp_get_dsize() {
+              dd-21875 [008] 43132.292115: funcgraph_entry:        0.690 us   |                        spa_config_enter();
+              dd-21875 [008] 43132.292116: funcgraph_entry:                   |                        dva_get_dsize_sync() {
+              dd-21875 [008] 43132.292117: funcgraph_entry:        0.760 us   |                          vdev_lookup_top();
+              dd-21875 [008] 43132.292118: funcgraph_exit:         1.862 us   |                        }
+              dd-21875 [008] 43132.292118: funcgraph_entry:                   |                        dva_get_dsize_sync() {
+              dd-21875 [008] 43132.292119: funcgraph_entry:        0.410 us   |                          vdev_lookup_top();
+              dd-21875 [008] 43132.292120: funcgraph_exit:         1.306 us   |                        }
+              dd-21875 [008] 43132.292120: funcgraph_entry:        0.440 us   |                        dva_get_dsize_sync();
+              dd-21875 [008] 43132.292121: funcgraph_entry:        0.617 us   |                        spa_config_exit();
+              dd-21875 [008] 43132.292122: funcgraph_exit:         7.603 us   |                      }
+              dd-21875 [008] 43132.292123: funcgraph_entry:        0.463 us   |                      ddt_prefetch();
+              dd-21875 [008] 43132.292124: funcgraph_entry:                   |                      dnode_willuse_space() {
+              dd-21875 [008] 43132.292124: funcgraph_entry:        0.434 us   |                        spa_get_asize();
+              dd-21875 [008] 43132.292125: funcgraph_entry:                   |                        dsl_dir_willuse_space() {
+              dd-21875 [008] 43132.292125: funcgraph_entry:                   |                          dsl_dir_dirty() {
+              dd-21875 [008] 43132.292126: funcgraph_entry:        0.470 us   |                            txg_list_add();
+              dd-21875 [008] 43132.292127: funcgraph_exit:         1.362 us   |                          }
+              dd-21875 [008] 43132.292127: funcgraph_exit:         2.289 us   |                        }
+              dd-21875 [008] 43132.292128: funcgraph_entry:        0.416 us   |                        dmu_tx_pool();
+              dd-21875 [008] 43132.292128: funcgraph_entry:        0.432 us   |                        dsl_pool_dirty_space();
+              dd-21875 [008] 43132.292129: funcgraph_entry:        0.410 us   |                        dmu_tx_willuse_space();
+              dd-21875 [008] 43132.292130: funcgraph_exit:         6.481 us   |                      }
+              dd-21875 [008] 43132.292131: funcgraph_entry:        0.416 us   |                      dnode_new_blkid();
+              dd-21875 [008] 43132.292132: funcgraph_entry:                   |                      dbuf_dirty() {
+              dd-21875 [008] 43132.292132: funcgraph_entry:        0.426 us   |                        zrl_add();
+              dd-21875 [008] 43132.292133: funcgraph_entry:                   |                        dnode_willuse_space() {
+              dd-21875 [008] 43132.292134: funcgraph_entry:        0.407 us   |                          spa_get_asize();
+              dd-21875 [008] 43132.292135: funcgraph_entry:                   |                          dsl_dir_willuse_space() {
+              dd-21875 [008] 43132.292135: funcgraph_entry:                   |                            dsl_dir_dirty() {
+              dd-21875 [008] 43132.292136: funcgraph_entry:        0.450 us   |                              txg_list_add();
+              dd-21875 [008] 43132.292136: funcgraph_exit:         1.320 us   |                            }
+              dd-21875 [008] 43132.292137: funcgraph_exit:         2.212 us   |                          }
+              dd-21875 [008] 43132.292137: funcgraph_entry:        0.414 us   |                          dmu_tx_pool();
+              dd-21875 [008] 43132.292138: funcgraph_entry:        0.507 us   |                          dsl_pool_dirty_space();
+              dd-21875 [008] 43132.292139: funcgraph_entry:        0.410 us   |                          dmu_tx_willuse_space();
+              dd-21875 [008] 43132.292140: funcgraph_exit:         6.454 us   |                        }
+              dd-21875 [008] 43132.292141: funcgraph_entry:                   |                        dsl_dataset_block_freeable() {
+              dd-21875 [008] 43132.292141: funcgraph_entry:                   |                          dsl_dataset_prev_snap_txg() {
+              dd-21875 [008] 43132.292142: funcgraph_entry:        0.407 us   |                            spa_last_synced_txg();
+              dd-21875 [008] 43132.292143: funcgraph_exit:         1.573 us   |                          }
+              dd-21875 [008] 43132.292143: funcgraph_entry:        0.436 us   |                          ddt_prefetch();
+              dd-21875 [008] 43132.292144: funcgraph_exit:         3.314 us   |                        }
+              dd-21875 [008] 43132.292145: funcgraph_entry:        0.433 us   |                        dmu_buf_add_ref();
+              dd-21875 [008] 43132.292146: funcgraph_entry:                   |                        bp_get_dsize() {
+              dd-21875 [008] 43132.292146: funcgraph_entry:        0.513 us   |                          spa_config_enter();
+              dd-21875 [008] 43132.292147: funcgraph_entry:                   |                          dva_get_dsize_sync() {
+              dd-21875 [008] 43132.292147: funcgraph_entry:        0.407 us   |                            vdev_lookup_top();
+              dd-21875 [008] 43132.292148: funcgraph_exit:         1.252 us   |                          }
+              dd-21875 [008] 43132.292149: funcgraph_entry:                   |                          dva_get_dsize_sync() {
+              dd-21875 [008] 43132.292149: funcgraph_entry:        0.416 us   |                            vdev_lookup_top();
+              dd-21875 [008] 43132.292150: funcgraph_exit:         1.232 us   |                          }
+              dd-21875 [008] 43132.292150: funcgraph_entry:        0.416 us   |                          dva_get_dsize_sync();
+              dd-21875 [008] 43132.292151: funcgraph_entry:        0.515 us   |                          spa_config_exit();
+              dd-21875 [008] 43132.292152: funcgraph_exit:         6.424 us   |                        }
+              dd-21875 [008] 43132.292152: funcgraph_entry:        0.437 us   |                        ddt_prefetch();
+              dd-21875 [008] 43132.292153: funcgraph_entry:                   |                        dnode_willuse_space() {
+              dd-21875 [008] 43132.292154: funcgraph_entry:        0.407 us   |                          spa_get_asize();
+              dd-21875 [008] 43132.292154: funcgraph_entry:                   |                          dsl_dir_willuse_space() {
+              dd-21875 [008] 43132.292155: funcgraph_entry:                   |                            dsl_dir_dirty() {
+              dd-21875 [008] 43132.292155: funcgraph_entry:        0.446 us   |                              txg_list_add();
+              dd-21875 [008] 43132.292156: funcgraph_exit:         1.329 us   |                            }
+              dd-21875 [008] 43132.292157: funcgraph_exit:         2.213 us   |                          }
+              dd-21875 [008] 43132.292157: funcgraph_entry:        0.406 us   |                          dmu_tx_pool();
+              dd-21875 [008] 43132.292158: funcgraph_entry:        0.433 us   |                          dsl_pool_dirty_space();
+              dd-21875 [008] 43132.292159: funcgraph_entry:        0.407 us   |                          dmu_tx_willuse_space();
+              dd-21875 [008] 43132.292160: funcgraph_exit:         6.379 us   |                        }
+              dd-21875 [008] 43132.292160: funcgraph_entry:                   |                        dbuf_dirty() {
+              dd-21875 [008] 43132.292161: funcgraph_entry:        0.437 us   |                          zrl_add();
+              dd-21875 [008] 43132.292162: funcgraph_entry:                   |                          dnode_willuse_space() {
+              dd-21875 [008] 43132.292162: funcgraph_entry:        0.410 us   |                            spa_get_asize();
+              dd-21875 [008] 43132.292163: funcgraph_entry:                   |                            dsl_dir_willuse_space() {
+              dd-21875 [008] 43132.292164: funcgraph_entry:                   |                              dsl_dir_dirty() {
+              dd-21875 [008] 43132.292164: funcgraph_entry:        0.447 us   |                                txg_list_add();
+              dd-21875 [008] 43132.292165: funcgraph_exit:         1.326 us   |                              }
+              dd-21875 [008] 43132.292165: funcgraph_exit:         2.205 us   |                            }
+              dd-21875 [008] 43132.292166: funcgraph_entry:        0.410 us   |                            dmu_tx_pool();
+              dd-21875 [008] 43132.292167: funcgraph_entry:        0.513 us   |                            dsl_pool_dirty_space();
+              dd-21875 [008] 43132.292167: funcgraph_entry:        0.406 us   |                            dmu_tx_willuse_space();
+              dd-21875 [008] 43132.292168: funcgraph_exit:         6.440 us   |                          }
+              dd-21875 [008] 43132.292169: funcgraph_entry:                   |                          dsl_dataset_block_freeable() {
+              dd-21875 [008] 43132.292169: funcgraph_entry:                   |                            dsl_dataset_prev_snap_txg() {
+              dd-21875 [008] 43132.292170: funcgraph_entry:        0.410 us   |                              spa_last_synced_txg();
+              dd-21875 [008] 43132.292170: funcgraph_exit:         1.269 us   |                            }
+              dd-21875 [008] 43132.292171: funcgraph_entry:        0.417 us   |                            ddt_prefetch();
+              dd-21875 [008] 43132.292172: funcgraph_exit:         2.935 us   |                          }
+              dd-21875 [008] 43132.292173: funcgraph_entry:        0.413 us   |                          dmu_buf_add_ref();
+              dd-21875 [008] 43132.292173: funcgraph_entry:                   |                          bp_get_dsize() {
+              dd-21875 [008] 43132.292174: funcgraph_entry:        0.500 us   |                            spa_config_enter();
+              dd-21875 [008] 43132.292175: funcgraph_entry:                   |                            dva_get_dsize_sync() {
+              dd-21875 [008] 43132.292175: funcgraph_entry:        0.562 us   |                              vdev_lookup_top();
+              dd-21875 [008] 43132.292176: funcgraph_exit:         1.476 us   |                            }
+              dd-21875 [008] 43132.292177: funcgraph_entry:                   |                            dva_get_dsize_sync() {
+              dd-21875 [008] 43132.292177: funcgraph_entry:        0.420 us   |                              vdev_lookup_top();
+              dd-21875 [008] 43132.292178: funcgraph_exit:         1.240 us   |                            }
+              dd-21875 [008] 43132.292178: funcgraph_entry:        0.420 us   |                            dva_get_dsize_sync();
+              dd-21875 [008] 43132.292179: funcgraph_entry:        0.819 us   |                            spa_config_exit();
+              dd-21875 [008] 43132.292180: funcgraph_exit:         6.972 us   |                          }
+              dd-21875 [008] 43132.292181: funcgraph_entry:        0.437 us   |                          ddt_prefetch();
+              dd-21875 [008] 43132.292182: funcgraph_entry:                   |                          dnode_willuse_space() {
+              dd-21875 [008] 43132.292182: funcgraph_entry:        0.420 us   |                            spa_get_asize();
+              dd-21875 [008] 43132.292183: funcgraph_entry:                   |                            dsl_dir_willuse_space() {
+              dd-21875 [008] 43132.292184: funcgraph_entry:                   |                              dsl_dir_dirty() {
+              dd-21875 [008] 43132.292184: funcgraph_entry:        0.453 us   |                                txg_list_add();
+              dd-21875 [008] 43132.292185: funcgraph_exit:         1.329 us   |                              }
+              dd-21875 [008] 43132.292185: funcgraph_exit:         2.233 us   |                            }
+              dd-21875 [008] 43132.292186: funcgraph_entry:        0.413 us   |                            dmu_tx_pool();
+              dd-21875 [008] 43132.292187: funcgraph_entry:        0.437 us   |                            dsl_pool_dirty_space();
+              dd-21875 [008] 43132.292187: funcgraph_entry:        0.413 us   |                            dmu_tx_willuse_space();
+              dd-21875 [008] 43132.292188: funcgraph_exit:         6.443 us   |                          }
+              dd-21875 [008] 43132.292189: funcgraph_entry:                   |                          dbuf_dirty() {
+              dd-21875 [008] 43132.292189: funcgraph_entry:        0.430 us   |                            zrl_add();
+              dd-21875 [008] 43132.292190: funcgraph_entry:                   |                            dnode_willuse_space() {
+              dd-21875 [008] 43132.292191: funcgraph_entry:        0.400 us   |                              spa_get_asize();
+              dd-21875 [008] 43132.292191: funcgraph_entry:                   |                              dsl_dir_willuse_space() {
+              dd-21875 [008] 43132.292192: funcgraph_entry:                   |                                dsl_dir_dirty() {
+              dd-21875 [008] 43132.292192: funcgraph_entry:        0.506 us   |                                  txg_list_add();
+              dd-21875 [008] 43132.292193: funcgraph_exit:         1.385 us   |                                }
+              dd-21875 [008] 43132.292194: funcgraph_exit:         2.272 us   |                              }
+              dd-21875 [008] 43132.292194: funcgraph_entry:        0.455 us   |                              dmu_tx_pool();
+              dd-21875 [008] 43132.292195: funcgraph_entry:        0.510 us   |                              dsl_pool_dirty_space();
+              dd-21875 [008] 43132.292196: funcgraph_entry:        0.466 us   |                              dmu_tx_willuse_space();
+              dd-21875 [008] 43132.292197: funcgraph_exit:         6.593 us   |                            }
+              dd-21875 [008] 43132.292197: funcgraph_entry:                   |                            dsl_dataset_block_freeable() {
+              dd-21875 [008] 43132.292198: funcgraph_entry:                   |                              dsl_dataset_prev_snap_txg() {
+              dd-21875 [008] 43132.292198: funcgraph_entry:        0.416 us   |                                spa_last_synced_txg();
+              dd-21875 [008] 43132.292199: funcgraph_exit:         1.236 us   |                              }
+              dd-21875 [008] 43132.292200: funcgraph_entry:        0.457 us   |                              ddt_prefetch();
+              dd-21875 [008] 43132.292200: funcgraph_exit:         2.978 us   |                            }
+              dd-21875 [008] 43132.292201: funcgraph_entry:        0.407 us   |                            dmu_buf_add_ref();
+              dd-21875 [008] 43132.292202: funcgraph_entry:                   |                            bp_get_dsize() {
+              dd-21875 [008] 43132.292202: funcgraph_entry:        0.492 us   |                              spa_config_enter();
+              dd-21875 [008] 43132.292203: funcgraph_entry:                   |                              dva_get_dsize_sync() {
+              dd-21875 [008] 43132.292204: funcgraph_entry:        0.410 us   |                                vdev_lookup_top();
+              dd-21875 [008] 43132.292205: funcgraph_exit:         1.316 us   |                              }
+              dd-21875 [008] 43132.292205: funcgraph_entry:                   |                              dva_get_dsize_sync() {
+              dd-21875 [008] 43132.292205: funcgraph_entry:        0.410 us   |                                vdev_lookup_top();
+              dd-21875 [008] 43132.292206: funcgraph_exit:         1.214 us   |                              }
+              dd-21875 [008] 43132.292207: funcgraph_entry:        0.407 us   |                              dva_get_dsize_sync();
+              dd-21875 [008] 43132.292208: funcgraph_entry:        0.517 us   |                              spa_config_exit();
+              dd-21875 [008] 43132.292208: funcgraph_exit:         6.454 us   |                            }
+              dd-21875 [008] 43132.292209: funcgraph_entry:        0.413 us   |                            ddt_prefetch();
+              dd-21875 [008] 43132.292210: funcgraph_entry:                   |                            dnode_willuse_space() {
+              dd-21875 [008] 43132.292210: funcgraph_entry:        0.413 us   |                              spa_get_asize();
+              dd-21875 [008] 43132.292211: funcgraph_entry:                   |                              dsl_dir_willuse_space() {
+              dd-21875 [008] 43132.292211: funcgraph_entry:                   |                                dsl_dir_dirty() {
+              dd-21875 [008] 43132.292212: funcgraph_entry:        0.450 us   |                                  txg_list_add();
+              dd-21875 [008] 43132.292213: funcgraph_exit:         1.279 us   |                                }
+              dd-21875 [008] 43132.292213: funcgraph_exit:         2.159 us   |                              }
+              dd-21875 [008] 43132.292214: funcgraph_entry:        0.410 us   |                              dmu_tx_pool();
+              dd-21875 [008] 43132.292214: funcgraph_entry:        0.433 us   |                              dsl_pool_dirty_space();
+              dd-21875 [008] 43132.292215: funcgraph_entry:        0.410 us   |                              dmu_tx_willuse_space();
+              dd-21875 [008] 43132.292216: funcgraph_exit:         6.293 us   |                            }
+              dd-21875 [008] 43132.292217: funcgraph_entry:                   |                            dbuf_dirty() {
+              dd-21875 [008] 43132.292217: funcgraph_entry:        0.734 us   |                              zrl_add();
+              dd-21875 [008] 43132.292218: funcgraph_entry:                   |                              dnode_willuse_space() {
+              dd-21875 [008] 43132.292219: funcgraph_entry:        0.470 us   |                                spa_get_asize();
+              dd-21875 [008] 43132.292220: funcgraph_entry:                   |                                dsl_dir_willuse_space() {
+              dd-21875 [008] 43132.292220: funcgraph_entry:                   |                                  dsl_dir_dirty() {
+              dd-21875 [008] 43132.292221: funcgraph_entry:        0.463 us   |                                    txg_list_add();
+              dd-21875 [008] 43132.292222: funcgraph_exit:         1.369 us   |                                  }
+              dd-21875 [008] 43132.292222: funcgraph_exit:         2.295 us   |                                }
+              dd-21875 [008] 43132.292222: funcgraph_entry:        0.413 us   |                                dmu_tx_pool();
+              dd-21875 [008] 43132.292223: funcgraph_entry:        0.507 us   |                                dsl_pool_dirty_space();
+              dd-21875 [008] 43132.292224: funcgraph_entry:        0.410 us   |                                dmu_tx_willuse_space();
+              dd-21875 [008] 43132.292225: funcgraph_exit:         6.633 us   |                              }
+              dd-21875 [008] 43132.292226: funcgraph_entry:                   |                              dsl_dataset_block_freeable() {
+              dd-21875 [008] 43132.292226: funcgraph_entry:                   |                                dsl_dataset_prev_snap_txg() {
+              dd-21875 [008] 43132.292226: funcgraph_entry:        0.410 us   |                                  spa_last_synced_txg();
+              dd-21875 [008] 43132.292227: funcgraph_exit:         1.235 us   |                                }
+              dd-21875 [008] 43132.292228: funcgraph_entry:        0.454 us   |                                ddt_prefetch();
+              dd-21875 [008] 43132.292229: funcgraph_exit:         2.922 us   |                              }
+              dd-21875 [008] 43132.292229: funcgraph_entry:        0.410 us   |                              dmu_buf_add_ref();
+              dd-21875 [008] 43132.292230: funcgraph_entry:                   |                              bp_get_dsize() {
+              dd-21875 [008] 43132.292231: funcgraph_entry:        0.499 us   |                                spa_config_enter();
+              dd-21875 [008] 43132.292231: funcgraph_entry:                   |                                dva_get_dsize_sync() {
+              dd-21875 [008] 43132.292232: funcgraph_entry:        0.417 us   |                                  vdev_lookup_top();
+              dd-21875 [008] 43132.292233: funcgraph_exit:         1.317 us   |                                }
+              dd-21875 [008] 43132.292233: funcgraph_entry:                   |                                dva_get_dsize_sync() {
+              dd-21875 [008] 43132.292234: funcgraph_entry:        0.417 us   |                                  vdev_lookup_top();
+              dd-21875 [008] 43132.292234: funcgraph_exit:         1.236 us   |                                }
+              dd-21875 [008] 43132.292235: funcgraph_entry:        0.516 us   |                                dva_get_dsize_sync();
+              dd-21875 [008] 43132.292236: funcgraph_entry:        0.517 us   |                                spa_config_exit();
+              dd-21875 [008] 43132.292237: funcgraph_exit:         6.681 us   |                              }
+              dd-21875 [008] 43132.292237: funcgraph_entry:        0.413 us   |                              ddt_prefetch();
+              dd-21875 [008] 43132.292238: funcgraph_entry:                   |                              dnode_willuse_space() {
+              dd-21875 [008] 43132.292239: funcgraph_entry:        0.410 us   |                                spa_get_asize();
+              dd-21875 [008] 43132.292239: funcgraph_entry:                   |                                dsl_dir_willuse_space() {
+              dd-21875 [008] 43132.292240: funcgraph_entry:                   |                                  dsl_dir_dirty() {
+              dd-21875 [008] 43132.292240: funcgraph_entry:        0.453 us   |                                    txg_list_add();
+              dd-21875 [008] 43132.292241: funcgraph_exit:         1.337 us   |                                  }
+              dd-21875 [008] 43132.292242: funcgraph_exit:         2.238 us   |                                }
+              dd-21875 [008] 43132.292242: funcgraph_entry:        0.414 us   |                                dmu_tx_pool();
+              dd-21875 [008] 43132.292243: funcgraph_entry:        0.430 us   |                                dsl_pool_dirty_space();
+              dd-21875 [008] 43132.292244: funcgraph_entry:        0.410 us   |                                dmu_tx_willuse_space();
+              dd-21875 [008] 43132.292245: funcgraph_exit:         6.407 us   |                              }
+              dd-21875 [008] 43132.292245: funcgraph_entry:                   |                              dbuf_dirty() {
+              dd-21875 [008] 43132.292246: funcgraph_entry:        0.464 us   |                                zrl_add();
+              dd-21875 [008] 43132.292247: funcgraph_entry:                   |                                dnode_willuse_space() {
+              dd-21875 [008] 43132.292247: funcgraph_entry:        0.410 us   |                                  spa_get_asize();
+              dd-21875 [008] 43132.292248: funcgraph_entry:                   |                                  dsl_dir_willuse_space() {
+              dd-21875 [008] 43132.292248: funcgraph_entry:                   |                                    dsl_dir_dirty() {
+              dd-21875 [008] 43132.292249: funcgraph_entry:        0.477 us   |                                      txg_list_add();
+              dd-21875 [008] 43132.292250: funcgraph_exit:         1.356 us   |                                    }
+              dd-21875 [008] 43132.292250: funcgraph_exit:         2.256 us   |                                  }
+              dd-21875 [008] 43132.292250: funcgraph_entry:        0.410 us   |                                  dmu_tx_pool();
+              dd-21875 [008] 43132.292251: funcgraph_entry:        0.515 us   |                                  dsl_pool_dirty_space();
+              dd-21875 [008] 43132.292252: funcgraph_entry:        0.406 us   |                                  dmu_tx_willuse_space();
+              dd-21875 [008] 43132.292253: funcgraph_exit:         6.547 us   |                                }
+              dd-21875 [008] 43132.292254: funcgraph_entry:                   |                                dsl_dataset_block_freeable() {
+              dd-21875 [008] 43132.292254: funcgraph_entry:                   |                                  dsl_dataset_prev_snap_txg() {
+              dd-21875 [008] 43132.292255: funcgraph_entry:        0.417 us   |                                    spa_last_synced_txg();
+              dd-21875 [008] 43132.292256: funcgraph_exit:         1.240 us   |                                  }
+              dd-21875 [008] 43132.292256: funcgraph_entry:        0.486 us   |                                  ddt_prefetch();
+              dd-21875 [008] 43132.292257: funcgraph_exit:         3.369 us   |                                }
+              dd-21875 [008] 43132.292258: funcgraph_entry:        0.437 us   |                                dmu_buf_add_ref();
+              dd-21875 [008] 43132.292259: funcgraph_entry:                   |                                bp_get_dsize() {
+              dd-21875 [008] 43132.292259: funcgraph_entry:        0.523 us   |                                  spa_config_enter();
+              dd-21875 [008] 43132.292260: funcgraph_entry:                   |                                  dva_get_dsize_sync() {
+              dd-21875 [008] 43132.292261: funcgraph_entry:        0.433 us   |                                    vdev_lookup_top();
+              dd-21875 [008] 43132.292262: funcgraph_exit:         1.383 us   |                                  }
+              dd-21875 [008] 43132.292262: funcgraph_entry:                   |                                  dva_get_dsize_sync() {
+              dd-21875 [008] 43132.292262: funcgraph_entry:        0.417 us   |                                    vdev_lookup_top();
+              dd-21875 [008] 43132.292263: funcgraph_exit:         1.260 us   |                                  }
+              dd-21875 [008] 43132.292264: funcgraph_entry:        0.422 us   |                                  dva_get_dsize_sync();
+              dd-21875 [008] 43132.292265: funcgraph_entry:        0.524 us   |                                  spa_config_exit();
+              dd-21875 [008] 43132.292266: funcgraph_exit:         6.797 us   |                                }
+              dd-21875 [008] 43132.292266: funcgraph_entry:        0.430 us   |                                ddt_prefetch();
+              dd-21875 [008] 43132.292267: funcgraph_entry:                   |                                dnode_willuse_space() {
+              dd-21875 [008] 43132.292267: funcgraph_entry:        0.423 us   |                                  spa_get_asize();
+              dd-21875 [008] 43132.292268: funcgraph_entry:                   |                                  dsl_dir_willuse_space() {
+              dd-21875 [008] 43132.292269: funcgraph_entry:                   |                                    dsl_dir_dirty() {
+              dd-21875 [008] 43132.292269: funcgraph_entry:        0.520 us   |                                      txg_list_add();
+              dd-21875 [008] 43132.292270: funcgraph_exit:         1.359 us   |                                    }
+              dd-21875 [008] 43132.292271: funcgraph_exit:         2.389 us   |                                  }
+              dd-21875 [008] 43132.292271: funcgraph_entry:        0.414 us   |                                  dmu_tx_pool();
+              dd-21875 [008] 43132.292272: funcgraph_entry:        0.436 us   |                                  dsl_pool_dirty_space();
+              dd-21875 [008] 43132.292273: funcgraph_entry:        0.413 us   |                                  dmu_tx_willuse_space();
+              dd-21875 [008] 43132.292273: funcgraph_exit:         6.654 us   |                                }
+              dd-21875 [008] 43132.292274: funcgraph_entry:                   |                                dbuf_dirty() {
+              dd-21875 [008] 43132.292275: funcgraph_entry:        0.426 us   |                                  zrl_add();
+              dd-21875 [008] 43132.292276: funcgraph_entry:                   |                                  dnode_willuse_space() {
+              dd-21875 [008] 43132.292276: funcgraph_entry:        0.419 us   |                                    spa_get_asize();
+              dd-21875 [008] 43132.292277: funcgraph_entry:                   |                                    dsl_dir_willuse_space() {
+              dd-21875 [008] 43132.292277: funcgraph_entry:                   |                                      dsl_dir_dirty() {
+              dd-21875 [008] 43132.292278: funcgraph_entry:        0.490 us   |                                        txg_list_add();
+              dd-21875 [008] 43132.292279: funcgraph_exit:         1.306 us   |                                      }
+              dd-21875 [008] 43132.292279: funcgraph_exit:         2.212 us   |                                    }
+              dd-21875 [008] 43132.292279: funcgraph_entry:        0.423 us   |                                    dmu_tx_pool();
+              dd-21875 [008] 43132.292280: funcgraph_entry:        0.513 us   |                                    dsl_pool_dirty_space();
+              dd-21875 [008] 43132.292281: funcgraph_entry:        0.417 us   |                                    dmu_tx_willuse_space();
+              dd-21875 [008] 43132.292282: funcgraph_exit:         6.530 us   |                                  }
+              dd-21875 [008] 43132.292283: funcgraph_entry:                   |                                  dsl_dataset_block_freeable() {
+              dd-21875 [008] 43132.292283: funcgraph_entry:                   |                                    dsl_dataset_prev_snap_txg() {
+              dd-21875 [008] 43132.292283: funcgraph_entry:        0.420 us   |                                      spa_last_synced_txg();
+              dd-21875 [008] 43132.292284: funcgraph_exit:         1.313 us   |                                    }
+              dd-21875 [008] 43132.292285: funcgraph_entry:        0.463 us   |                                    ddt_prefetch();
+              dd-21875 [008] 43132.292286: funcgraph_exit:         3.035 us   |                                  }
+              dd-21875 [008] 43132.292286: funcgraph_entry:        0.413 us   |                                  dmu_buf_add_ref();
+              dd-21875 [008] 43132.292287: funcgraph_entry:                   |                                  bp_get_dsize() {
+              dd-21875 [008] 43132.292288: funcgraph_entry:        0.520 us   |                                    spa_config_enter();
+              dd-21875 [008] 43132.292289: funcgraph_entry:                   |                                    dva_get_dsize_sync() {
+              dd-21875 [008] 43132.292289: funcgraph_entry:        0.430 us   |                                      vdev_lookup_top();
+              dd-21875 [008] 43132.292290: funcgraph_exit:         1.350 us   |                                    }
+              dd-21875 [008] 43132.292290: funcgraph_entry:                   |                                    dva_get_dsize_sync() {
+              dd-21875 [008] 43132.292291: funcgraph_entry:        0.423 us   |                                      vdev_lookup_top();
+              dd-21875 [008] 43132.292292: funcgraph_exit:         1.242 us   |                                    }
+              dd-21875 [008] 43132.292292: funcgraph_entry:        0.413 us   |                                    dva_get_dsize_sync();
+              dd-21875 [008] 43132.292293: funcgraph_entry:        0.523 us   |                                    spa_config_exit();
+              dd-21875 [008] 43132.292294: funcgraph_exit:         6.590 us   |                                  }
+              dd-21875 [008] 43132.292295: funcgraph_entry:        0.406 us   |                                  ddt_prefetch();
+              dd-21875 [008] 43132.292295: funcgraph_entry:                   |                                  dnode_willuse_space() {
+              dd-21875 [008] 43132.292296: funcgraph_entry:        0.424 us   |                                    spa_get_asize();
+              dd-21875 [008] 43132.292297: funcgraph_entry:                   |                                    dsl_dir_willuse_space() {
+              dd-21875 [008] 43132.292297: funcgraph_entry:                   |                                      dsl_dir_dirty() {
+              dd-21875 [008] 43132.292298: funcgraph_entry:        0.450 us   |                                        txg_list_add();
+              dd-21875 [008] 43132.292298: funcgraph_exit:         1.300 us   |                                      }
+              dd-21875 [008] 43132.292299: funcgraph_exit:         2.245 us   |                                    }
+              dd-21875 [008] 43132.292299: funcgraph_entry:        0.430 us   |                                    dmu_tx_pool();
+              dd-21875 [008] 43132.292300: funcgraph_entry:        0.439 us   |                                    dsl_pool_dirty_space();
+              dd-21875 [008] 43132.292301: funcgraph_entry:        0.414 us   |                                    dmu_tx_willuse_space();
+              dd-21875 [008] 43132.292302: funcgraph_exit:         6.504 us   |                                  }
+              dd-21875 [008] 43132.292303: funcgraph_entry:        0.539 us   |                                  RW_WRITE_HELD();
+              dd-21875 [008] 43132.292304: funcgraph_entry:                   |                                  dnode_setdirty() {
+              dd-21875 [008] 43132.292304: funcgraph_entry:                   |                                    dsl_dataset_dirty() {
+              dd-21875 [008] 43132.292305: funcgraph_entry:        0.569 us   |                                      txg_list_add();
+              dd-21875 [008] 43132.292306: funcgraph_entry:        0.507 us   |                                      dmu_buf_add_ref();
+              dd-21875 [008] 43132.292307: funcgraph_exit:         2.423 us   |                                    }
+              dd-21875 [008] 43132.292307: funcgraph_exit:         3.348 us   |                                  }
+              dd-21875 [008] 43132.292307: funcgraph_entry:        0.410 us   |                                  zrl_remove();
+              dd-21875 [008] 43132.292308: funcgraph_exit:       + 34.273 us  |                                }
+              dd-21875 [008] 43132.292309: funcgraph_entry:                   |                                dnode_setdirty() {
+              dd-21875 [008] 43132.292309: funcgraph_entry:                   |                                  dsl_dataset_dirty() {
+              dd-21875 [008] 43132.292310: funcgraph_entry:        0.487 us   |                                    txg_list_add();
+              dd-21875 [008] 43132.292311: funcgraph_exit:         1.406 us   |                                  }
+              dd-21875 [008] 43132.292311: funcgraph_exit:         2.239 us   |                                }
+              dd-21875 [008] 43132.292312: funcgraph_entry:        0.416 us   |                                zrl_remove();
+              dd-21875 [008] 43132.292313: funcgraph_exit:       + 67.487 us  |                              }
+              dd-21875 [008] 43132.292313: funcgraph_entry:                   |                              dnode_setdirty() {
+              dd-21875 [008] 43132.292314: funcgraph_entry:                   |                                dsl_dataset_dirty() {
+              dd-21875 [008] 43132.292314: funcgraph_entry:        0.443 us   |                                  txg_list_add();
+              dd-21875 [008] 43132.292315: funcgraph_exit:         1.283 us   |                                }
+              dd-21875 [008] 43132.292315: funcgraph_exit:         2.129 us   |                              }
+              dd-21875 [008] 43132.292316: funcgraph_entry:        0.420 us   |                              zrl_remove();
+              dd-21875 [008] 43132.292317: funcgraph_exit:       + 99.891 us  |                            }
+              dd-21875 [008] 43132.292317: funcgraph_entry:                   |                            dnode_setdirty() {
+              dd-21875 [008] 43132.292318: funcgraph_entry:                   |                              dsl_dataset_dirty() {
+              dd-21875 [008] 43132.292318: funcgraph_entry:        0.450 us   |                                txg_list_add();
+              dd-21875 [008] 43132.292319: funcgraph_exit:         1.270 us   |                              }
+              dd-21875 [008] 43132.292319: funcgraph_exit:         2.098 us   |                            }
+              dd-21875 [008] 43132.292320: funcgraph_entry:        0.406 us   |                            zrl_remove();
+              dd-21875 [008] 43132.292320: funcgraph_exit:       ! 131.613 us |                          }
+              dd-21875 [008] 43132.292321: funcgraph_entry:                   |                          dnode_setdirty() {
+              dd-21875 [008] 43132.292322: funcgraph_entry:                   |                            dsl_dataset_dirty() {
+              dd-21875 [008] 43132.292322: funcgraph_entry:        0.450 us   |                              txg_list_add();
+              dd-21875 [008] 43132.292323: funcgraph_exit:         1.280 us   |                            }
+              dd-21875 [008] 43132.292323: funcgraph_exit:         2.119 us   |                          }
+              dd-21875 [008] 43132.292324: funcgraph_entry:        0.417 us   |                          zrl_remove();
+              dd-21875 [008] 43132.292325: funcgraph_exit:       ! 164.287 us |                        }
+              dd-21875 [008] 43132.292325: funcgraph_entry:                   |                        dnode_setdirty() {
+              dd-21875 [008] 43132.292326: funcgraph_entry:                   |                          dsl_dataset_dirty() {
+              dd-21875 [008] 43132.292326: funcgraph_entry:        0.453 us   |                            txg_list_add();
+              dd-21875 [008] 43132.292327: funcgraph_exit:         1.280 us   |                          }
+              dd-21875 [008] 43132.292327: funcgraph_exit:         2.113 us   |                        }
+              dd-21875 [008] 43132.292328: funcgraph_entry:        0.410 us   |                        zrl_remove();
+              dd-21875 [008] 43132.292328: funcgraph_exit:       ! 196.527 us |                      }
+              dd-21875 [008] 43132.292329: funcgraph_entry:                   |                      dnode_setdirty() {
+              dd-21875 [008] 43132.292329: funcgraph_entry:                   |                        dsl_dataset_dirty() {
+              dd-21875 [008] 43132.292330: funcgraph_entry:        0.443 us   |                          txg_list_add();
+              dd-21875 [008] 43132.292331: funcgraph_exit:         1.273 us   |                        }
+              dd-21875 [008] 43132.292331: funcgraph_exit:         2.102 us   |                      }
+              dd-21875 [008] 43132.292332: funcgraph_entry:        0.704 us   |                      zrl_remove();
+              dd-21875 [008] 43132.292333: funcgraph_exit:       ! 234.861 us |                    }
+              dd-21875 [008] 43132.292333: funcgraph_entry:                   |                    dsl_dataset_dirty() {
+              dd-21875 [008] 43132.292334: funcgraph_entry:        0.453 us   |                      txg_list_add();
+              dd-21875 [008] 43132.292335: funcgraph_exit:         1.433 us   |                    }
+              dd-21875 [008] 43132.292335: funcgraph_exit:       ! 242.179 us |                  }
+              dd-21875 [008] 43132.292335: funcgraph_entry:        0.442 us   |                  zrl_remove();
+              dd-21875 [008] 43132.292336: funcgraph_exit:       ! 247.499 us |                }
+              dd-21875 [008] 43132.292337: funcgraph_exit:       ! 254.076 us |              }
+              dd-21875 [008] 43132.292338: funcgraph_exit:       ! 255.985 us |            }
+              dd-21875 [008] 43132.292338: funcgraph_exit:       ! 259.699 us |          }
+              dd-21875 [008] 43132.292339: funcgraph_exit:       ! 260.660 us |        }
+              dd-21875 [008] 43132.292339: funcgraph_entry:                   |        dmu_tx_commit() {
+              dd-21875 [008] 43132.292340: funcgraph_entry:        0.487 us   |          dnode_rele();
+              dd-21875 [008] 43132.292341: funcgraph_entry:                   |          dsl_dir_tempreserve_clear() {
+              dd-21875 [008] 43132.292342: funcgraph_entry:        0.449 us   |            arc_tempreserve_clear();
+              dd-21875 [008] 43132.292343: funcgraph_exit:         1.969 us   |          }
+              dd-21875 [008] 43132.292344: funcgraph_entry:        0.622 us   |          txg_rele_to_sync();
+              dd-21875 [008] 43132.292345: funcgraph_exit:         5.680 us   |        }
+              dd-21875 [008] 43132.292345: funcgraph_entry:        0.520 us   |        rrw_exit();
+              dd-21875 [008] 43132.292346: funcgraph_exit:       ! 326.273 us |      }
+              dd-21875 [008] 43132.292347: funcgraph_exit:       ! 327.203 us |    }
+              dd-21875 [008] 43132.292348: funcgraph_entry:                   |    zfs_close() {
+              dd-21875 [008] 43132.292348: funcgraph_entry:        0.506 us   |      rrw_enter_read();
+              dd-21875 [008] 43132.292349: funcgraph_entry:        0.480 us   |      rrw_exit();
+              dd-21875 [008] 43132.292350: funcgraph_exit:         2.365 us   |    }
+              dd-21875 [008] 43132.292351: funcgraph_exit:       ! 331.904 us |  }
