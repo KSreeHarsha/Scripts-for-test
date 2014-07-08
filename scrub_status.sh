@@ -1,1 +1,1 @@
-zpool status -v HDD
+zpool status -v tank

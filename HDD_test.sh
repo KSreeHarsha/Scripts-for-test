@@ -1,1 +1,1 @@
-dd if=/dev/zero of=/dev/sdg bs=8k count=1048576
+dd if=/dev/zero of=/dev/sdi bs=8k count=1048576
