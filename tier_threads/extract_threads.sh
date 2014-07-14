@@ -1,4 +1,4 @@
-filename="scrub_trace.c"
+filename="create_tier.c"
 fname=${filename:0:-2}
 cat $filename | grep z_null_iss > ${fname}_z_null_iss.c
 cat $filename | grep z_null_int > ${fname}_z_null_int.c
