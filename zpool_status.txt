@@ -1,0 +1,261 @@
+version = 6
+CPU 0 is empty
+CPU 1 is empty
+CPU 2 is empty
+CPU 3 is empty
+CPU 4 is empty
+CPU 5 is empty
+CPU 6 is empty
+CPU 9 is empty
+CPU 11 is empty
+cpus=12
+       trace-cmd-23934 [007] 63346.344606: funcgraph_entry:        3.848 us   |  zpl_show_options();
+       trace-cmd-23935 [008] 63346.344678: funcgraph_entry:        2.942 us   |  zpl_show_options();
+           zpool-23936 [010] 63346.346761: funcgraph_entry:                   |  zfsdev_open() {
+           zpool-23936 [010] 63346.346763: funcgraph_entry:        1.250 us   |    zfsdev_minor_alloc();
+           zpool-23936 [010] 63346.346765: funcgraph_entry:        1.795 us   |    zfs_onexit_init();
+           zpool-23936 [010] 63346.346768: funcgraph_entry:        0.716 us   |    zfs_zevent_init();
+           zpool-23936 [010] 63346.346769: funcgraph_exit:         8.542 us   |  }
+           zpool-23936 [010] 63346.346810: funcgraph_entry:                   |  zfsdev_open() {
+           zpool-23936 [010] 63346.346811: funcgraph_entry:        0.520 us   |    zfsdev_minor_alloc();
+           zpool-23936 [010] 63346.346812: funcgraph_entry:        0.783 us   |    zfs_onexit_init();
+           zpool-23936 [010] 63346.346813: funcgraph_entry:        0.580 us   |    zfs_zevent_init();
+           zpool-23936 [010] 63346.346814: funcgraph_exit:         4.231 us   |  }
+           zpool-23936 [010] 63346.347076: funcgraph_entry:                   |  zfsdev_ioctl() {
+           zpool-23936 [010] 63346.347086: funcgraph_entry:        0.539 us   |    pool_status_check();
+           zpool-23936 [010] 63346.347087: funcgraph_entry:        0.490 us   |    zfs_secpolicy_read();
+           zpool-23936 [010] 63346.347089: funcgraph_entry:                   |    zfs_ioc_pool_stats() {
+           zpool-23936 [010] 63346.347090: funcgraph_entry:                   |      spa_get_stats() {
+           zpool-23936 [010] 63346.347090: funcgraph_entry:                   |        spa_open_common() {
+           zpool-23936 [010] 63346.347091: funcgraph_entry:                   |          spa_lookup() {
+           zpool-23936 [010] 63346.347093: funcgraph_entry:        0.657 us   |            spa_name_compare();
+           zpool-23936 [010] 63346.347094: funcgraph_exit:         2.595 us   |          }
+           zpool-23936 [010] 63346.347094: funcgraph_entry:        0.543 us   |          spa_open_ref();
+           zpool-23936 [010] 63346.347095: funcgraph_entry:                   |          spa_config_generate() {
+           zpool-23936 [010] 63346.347096: funcgraph_entry:        0.876 us   |            spa_config_enter();
+           zpool-23936 [010] 63346.347098: funcgraph_entry:        0.406 us   |            spa_name();
+           zpool-23936 [010] 63346.347100: funcgraph_entry:        0.499 us   |            spa_version();
+           zpool-23936 [010] 63346.347104: funcgraph_entry:        0.413 us   |            spa_state();
+           zpool-23936 [010] 63346.347105: funcgraph_entry:                   |            spa_guid() {
+           zpool-23936 [010] 63346.347106: funcgraph_entry:                   |              dsl_pool_sync_context() {
+           zpool-23936 [010] 63346.347107: funcgraph_entry:        0.427 us   |                spa_is_initializing();
+           zpool-23936 [010] 63346.347108: funcgraph_exit:         1.512 us   |              }
+           zpool-23936 [010] 63346.347108: funcgraph_exit:         2.653 us   |            }
+           zpool-23936 [010] 63346.347111: funcgraph_entry:        1.899 us   |            vdev_top_config_generate();
+           zpool-23936 [010] 63346.347113: funcgraph_entry:                   |            vdev_config_generate() {
+           zpool-23936 [010] 63346.347117: funcgraph_entry:                   |              vdev_get_stats() {
+           zpool-23936 [010] 63346.347118: funcgraph_entry:        0.450 us   |                vdev_get_min_asize();
+           zpool-23936 [010] 63346.347119: funcgraph_exit:         2.432 us   |              }
+           zpool-23936 [010] 63346.347120: funcgraph_entry:        0.686 us   |              spa_scan_get_stats();
+           zpool-23936 [010] 63346.347122: funcgraph_entry:                   |              vdev_config_generate() {
+           zpool-23936 [010] 63346.347126: funcgraph_entry:                   |                vdev_get_stats() {
+           zpool-23936 [010] 63346.347127: funcgraph_entry:        0.673 us   |                  vdev_get_min_asize();
+           zpool-23936 [010] 63346.347128: funcgraph_exit:         1.886 us   |                }
+           zpool-23936 [010] 63346.347129: funcgraph_entry:        0.419 us   |                spa_scan_get_stats();
+           zpool-23936 [010] 63346.347131: funcgraph_entry:                   |                vdev_config_generate() {
+           zpool-23936 [010] 63346.347133: funcgraph_entry:                   |                  vdev_get_stats() {
+           zpool-23936 [010] 63346.347134: funcgraph_entry:        0.557 us   |                    vdev_get_min_asize();
+           zpool-23936 [010] 63346.347135: funcgraph_exit:         1.684 us   |                  }
+           zpool-23936 [010] 63346.347136: funcgraph_entry:        0.497 us   |                  spa_scan_get_stats();
+           zpool-23936 [010] 63346.347137: funcgraph_exit:         6.926 us   |                }
+           zpool-23936 [010] 63346.347138: funcgraph_entry:                   |                vdev_config_generate() {
+           zpool-23936 [010] 63346.347141: funcgraph_entry:                   |                  vdev_get_stats() {
+           zpool-23936 [010] 63346.347141: funcgraph_entry:        0.529 us   |                    vdev_get_min_asize();
+           zpool-23936 [010] 63346.347142: funcgraph_exit:         1.639 us   |                  }
+           zpool-23936 [010] 63346.347143: funcgraph_entry:        0.412 us   |                  spa_scan_get_stats();
+           zpool-23936 [010] 63346.347144: funcgraph_exit:         6.564 us   |                }
+           zpool-23936 [010] 63346.347157: funcgraph_exit:       + 35.300 us  |              }
+           zpool-23936 [010] 63346.347170: funcgraph_exit:       + 57.142 us  |            }
+           zpool-23936 [010] 63346.347187: funcgraph_entry:        0.423 us   |            spa_load_state();
+           zpool-23936 [010] 63346.347188: funcgraph_entry:      + 41.899 us  |            ddt_get_dedup_histogram();
+           zpool-23936 [010] 63346.347236: funcgraph_entry:        0.742 us   |            ddt_get_dedup_object_stats();
+           zpool-23936 [010] 63346.347238: funcgraph_entry:                   |            ddt_get_dedup_stats() {
+           zpool-23936 [010] 63346.347239: funcgraph_entry:      + 31.635 us  |              ddt_get_dedup_histogram();
+           zpool-23936 [010] 63346.347271: funcgraph_entry:        1.524 us   |              ddt_histogram_stat();
+           zpool-23936 [010] 63346.347273: funcgraph_exit:       + 35.033 us  |            }
+           zpool-23936 [010] 63346.347274: funcgraph_entry:        0.992 us   |            spa_config_exit();
+           zpool-23936 [010] 63346.347276: funcgraph_exit:       ! 180.135 us |          }
+           zpool-23936 [010] 63346.347276: funcgraph_exit:       ! 185.746 us |        }
+           zpool-23936 [010] 63346.347277: funcgraph_entry:        0.569 us   |        spa_config_enter();
+           zpool-23936 [010] 63346.347278: funcgraph_entry:        0.989 us   |        spa_get_errlog_size();
+           zpool-23936 [010] 63346.347281: funcgraph_entry:        0.529 us   |        spa_suspended();
+           zpool-23936 [010] 63346.347282: funcgraph_entry:        0.580 us   |        spa_add_spares();
+           zpool-23936 [010] 63346.347283: funcgraph_entry:        0.446 us   |        spa_add_l2cache();
+           zpool-23936 [010] 63346.347284: funcgraph_entry:                   |        spa_add_feature_stats() {
+           zpool-23936 [010] 63346.347285: funcgraph_entry:        0.423 us   |          zap_cursor_init();
+           zpool-23936 [010] 63346.347286: funcgraph_entry:                   |          zap_cursor_retrieve() {
+           zpool-23936 [010] 63346.347286: funcgraph_entry:                   |            zap_lockdir() {
+           zpool-23936 [010] 63346.347287: funcgraph_entry:                   |              dmu_buf_hold() {
+           zpool-23936 [010] 63346.347288: funcgraph_entry:                   |                dnode_hold() {
+           zpool-23936 [010] 63346.347288: funcgraph_entry:                   |                  dnode_hold_impl() {
+           zpool-23936 [010] 63346.347289: funcgraph_entry:        0.556 us   |                    dbuf_whichblock();
+           zpool-23936 [010] 63346.347291: funcgraph_entry:                   |                    dbuf_hold() {
+           zpool-23936 [010] 63346.347291: funcgraph_entry:                   |                      dbuf_hold_impl() {
+           zpool-23936 [010] 63346.347293: funcgraph_entry:                   |                        __dbuf_hold_impl() {
+           zpool-23936 [010] 63346.347294: funcgraph_entry:                   |                          dbuf_find() {
+           zpool-23936 [010] 63346.347294: funcgraph_entry:        1.236 us   |                            dbuf_hash();
+           zpool-23936 [010] 63346.347297: funcgraph_exit:         3.305 us   |                          }
+           zpool-23936 [010] 63346.347298: funcgraph_exit:         4.868 us   |                        }
+           zpool-23936 [010] 63346.347299: funcgraph_exit:         7.434 us   |                      }
+           zpool-23936 [010] 63346.347299: funcgraph_exit:         8.625 us   |                    }
+           zpool-23936 [010] 63346.347300: funcgraph_entry:        0.807 us   |                    RW_WRITE_HELD();
+           zpool-23936 [010] 63346.347302: funcgraph_entry:                   |                    dbuf_read() {
+           zpool-23936 [010] 63346.347303: funcgraph_entry:        0.812 us   |                      zrl_add();
+           zpool-23936 [010] 63346.347305: funcgraph_entry:        2.619 us   |                      dmu_zfetch();
+           zpool-23936 [010] 63346.347308: funcgraph_entry:        0.980 us   |                      RW_WRITE_HELD();
+           zpool-23936 [010] 63346.347310: funcgraph_entry:        0.607 us   |                      zrl_remove();
+           zpool-23936 [010] 63346.347311: funcgraph_exit:         9.809 us   |                    }
+           zpool-23936 [010] 63346.347312: funcgraph_entry:        0.813 us   |                    dmu_buf_get_user();
+           zpool-23936 [010] 63346.347314: funcgraph_entry:        0.790 us   |                    zrl_add();
+           zpool-23936 [010] 63346.347316: funcgraph_entry:        0.846 us   |                    zrl_remove();
+           zpool-23936 [010] 63346.347318: funcgraph_entry:                   |                    dmu_buf_rele() {
+           zpool-23936 [010] 63346.347318: funcgraph_entry:        0.914 us   |                      dbuf_rele_and_unlock();
+           zpool-23936 [010] 63346.347320: funcgraph_exit:         2.261 us   |                    }
+           zpool-23936 [010] 63346.347320: funcgraph_exit:       + 31.921 us  |                  }
+           zpool-23936 [010] 63346.347321: funcgraph_exit:       + 33.324 us  |                }
+           zpool-23936 [010] 63346.347322: funcgraph_entry:        0.526 us   |                dbuf_whichblock();
+           zpool-23936 [010] 63346.347323: funcgraph_entry:                   |                dbuf_hold() {
+           zpool-23936 [010] 63346.347324: funcgraph_entry:                   |                  dbuf_hold_impl() {
+           zpool-23936 [010] 63346.347325: funcgraph_entry:                   |                    __dbuf_hold_impl() {
+           zpool-23936 [010] 63346.347325: funcgraph_entry:                   |                      dbuf_find() {
+           zpool-23936 [010] 63346.347326: funcgraph_entry:        0.803 us   |                        dbuf_hash();
+           zpool-23936 [010] 63346.347327: funcgraph_exit:         2.096 us   |                      }
+           zpool-23936 [010] 63346.347328: funcgraph_entry:                   |                      arc_buf_add_ref() {
+           zpool-23936 [010] 63346.347330: funcgraph_entry:        0.916 us   |                        add_reference();
+           zpool-23936 [010] 63346.347331: funcgraph_entry:        0.647 us   |                        arc_access();
+           zpool-23936 [010] 63346.347332: funcgraph_exit:         4.071 us   |                      }
+           zpool-23936 [010] 63346.347333: funcgraph_exit:         7.959 us   |                    }
+           zpool-23936 [010] 63346.347334: funcgraph_exit:         9.616 us   |                  }
+           zpool-23936 [010] 63346.347334: funcgraph_exit:       + 10.968 us  |                }
+           zpool-23936 [010] 63346.347335: funcgraph_entry:                   |                dbuf_read() {
+           zpool-23936 [010] 63346.347335: funcgraph_entry:        0.413 us   |                  zrl_add();
+           zpool-23936 [010] 63346.347336: funcgraph_entry:        0.530 us   |                  RW_WRITE_HELD();
+           zpool-23936 [010] 63346.347338: funcgraph_entry:        0.416 us   |                  zrl_remove();
+           zpool-23936 [010] 63346.347338: funcgraph_exit:         3.801 us   |                }
+           zpool-23936 [010] 63346.347339: funcgraph_entry:        0.566 us   |                dnode_rele();
+           zpool-23936 [010] 63346.347340: funcgraph_exit:       + 52.995 us  |              }
+           zpool-23936 [010] 63346.347341: funcgraph_entry:        0.413 us   |              dmu_buf_get_user();
+           zpool-23936 [010] 63346.347342: funcgraph_exit:       + 55.060 us  |            }
+           zpool-23936 [010] 63346.347342: funcgraph_entry:        0.573 us   |            mze_compare();
+           zpool-23936 [010] 63346.347344: funcgraph_entry:        0.433 us   |            mzap_normalization_conflict();
+           zpool-23936 [010] 63346.347345: funcgraph_exit:       + 59.044 us  |          }
+           zpool-23936 [010] 63346.347349: funcgraph_entry:        0.420 us   |          zap_cursor_advance();
+           zpool-23936 [010] 63346.347349: funcgraph_entry:                   |          zap_cursor_retrieve() {
+           zpool-23936 [010] 63346.347350: funcgraph_entry:        0.469 us   |            mze_compare();
+           zpool-23936 [010] 63346.347351: funcgraph_exit:         1.832 us   |          }
+           zpool-23936 [010] 63346.347352: funcgraph_entry:                   |          zap_cursor_fini() {
+           zpool-23936 [010] 63346.347352: funcgraph_entry:                   |            zap_unlockdir() {
+           zpool-23936 [010] 63346.347353: funcgraph_entry:                   |              dmu_buf_rele() {
+           zpool-23936 [010] 63346.347353: funcgraph_entry:                   |                dbuf_rele_and_unlock() {
+           zpool-23936 [010] 63346.347354: funcgraph_entry:        0.513 us   |                  arc_buf_freeze();
+           zpool-23936 [010] 63346.347355: funcgraph_entry:        0.500 us   |                  arc_released();
+           zpool-23936 [010] 63346.347356: funcgraph_entry:                   |                  arc_buf_remove_ref() {
+           zpool-23936 [010] 63346.347357: funcgraph_entry:        0.570 us   |                    remove_reference();
+           zpool-23936 [010] 63346.347358: funcgraph_exit:         1.666 us   |                  }
+           zpool-23936 [010] 63346.347358: funcgraph_entry:        0.549 us   |                  arc_buf_eviction_needed();
+           zpool-23936 [010] 63346.347359: funcgraph_exit:         5.951 us   |                }
+           zpool-23936 [010] 63346.347360: funcgraph_exit:         6.851 us   |              }
+           zpool-23936 [010] 63346.347360: funcgraph_exit:         7.899 us   |            }
+           zpool-23936 [010] 63346.347361: funcgraph_exit:         8.835 us   |          }
+           zpool-23936 [010] 63346.347361: funcgraph_entry:        0.403 us   |          zap_cursor_init();
+           zpool-23936 [010] 63346.347362: funcgraph_entry:                   |          zap_cursor_retrieve() {
+           zpool-23936 [010] 63346.347362: funcgraph_entry:                   |            zap_lockdir() {
+           zpool-23936 [010] 63346.347363: funcgraph_entry:                   |              dmu_buf_hold() {
+           zpool-23936 [010] 63346.347363: funcgraph_entry:                   |                dnode_hold() {
+           zpool-23936 [010] 63346.347364: funcgraph_entry:                   |                  dnode_hold_impl() {
+           zpool-23936 [010] 63346.347364: funcgraph_entry:        0.467 us   |                    dbuf_whichblock();
+           zpool-23936 [010] 63346.347365: funcgraph_entry:                   |                    dbuf_hold() {
+           zpool-23936 [010] 63346.347365: funcgraph_entry:                   |                      dbuf_hold_impl() {
+           zpool-23936 [010] 63346.347366: funcgraph_entry:                   |                        __dbuf_hold_impl() {
+           zpool-23936 [010] 63346.347367: funcgraph_entry:                   |                          dbuf_find() {
+           zpool-23936 [010] 63346.347367: funcgraph_entry:        0.437 us   |                            dbuf_hash();
+           zpool-23936 [010] 63346.347368: funcgraph_exit:         1.342 us   |                          }
+           zpool-23936 [010] 63346.347368: funcgraph_exit:         2.269 us   |                        }
+           zpool-23936 [010] 63346.347369: funcgraph_exit:         3.444 us   |                      }
+           zpool-23936 [010] 63346.347369: funcgraph_exit:         4.322 us   |                    }
+           zpool-23936 [010] 63346.347370: funcgraph_entry:        0.526 us   |                    RW_WRITE_HELD();
+           zpool-23936 [010] 63346.347371: funcgraph_entry:                   |                    dbuf_read() {
+           zpool-23936 [010] 63346.347371: funcgraph_entry:        0.413 us   |                      zrl_add();
+           zpool-23936 [010] 63346.347372: funcgraph_entry:        0.726 us   |                      dmu_zfetch();
+           zpool-23936 [010] 63346.347373: funcgraph_entry:        0.530 us   |                      RW_WRITE_HELD();
+           zpool-23936 [010] 63346.347374: funcgraph_entry:        0.410 us   |                      zrl_remove();
+           zpool-23936 [010] 63346.347375: funcgraph_exit:         4.344 us   |                    }
+           zpool-23936 [010] 63346.347376: funcgraph_entry:        0.420 us   |                    dmu_buf_get_user();
+           zpool-23936 [010] 63346.347376: funcgraph_entry:        0.416 us   |                    zrl_add();
+           zpool-23936 [010] 63346.347378: funcgraph_entry:        0.414 us   |                    zrl_remove();
+           zpool-23936 [010] 63346.347378: funcgraph_entry:                   |                    dmu_buf_rele() {
+           zpool-23936 [010] 63346.347379: funcgraph_entry:        0.469 us   |                      dbuf_rele_and_unlock();
+           zpool-23936 [010] 63346.347380: funcgraph_exit:         1.312 us   |                    }
+           zpool-23936 [010] 63346.347380: funcgraph_exit:       + 16.548 us  |                  }
+           zpool-23936 [010] 63346.347381: funcgraph_exit:       + 17.396 us  |                }
+           zpool-23936 [010] 63346.347381: funcgraph_entry:        0.413 us   |                dbuf_whichblock();
+           zpool-23936 [010] 63346.347382: funcgraph_entry:                   |                dbuf_hold() {
+           zpool-23936 [010] 63346.347383: funcgraph_entry:                   |                  dbuf_hold_impl() {
+           zpool-23936 [010] 63346.347383: funcgraph_entry:                   |                    __dbuf_hold_impl() {
+           zpool-23936 [010] 63346.347384: funcgraph_entry:                   |                      dbuf_find() {
+           zpool-23936 [010] 63346.347384: funcgraph_entry:        0.576 us   |                        dbuf_hash();
+           zpool-23936 [010] 63346.347386: funcgraph_exit:         1.949 us   |                      }
+           zpool-23936 [010] 63346.347386: funcgraph_entry:                   |                      arc_buf_add_ref() {
+           zpool-23936 [010] 63346.347387: funcgraph_entry:        0.643 us   |                        add_reference();
+           zpool-23936 [010] 63346.347388: funcgraph_entry:        0.563 us   |                        arc_access();
+           zpool-23936 [010] 63346.347389: funcgraph_exit:         3.178 us   |                      }
+           zpool-23936 [010] 63346.347390: funcgraph_exit:         6.694 us   |                    }
+           zpool-23936 [010] 63346.347391: funcgraph_exit:         7.926 us   |                  }
+           zpool-23936 [010] 63346.347391: funcgraph_exit:         9.059 us   |                }
+           zpool-23936 [010] 63346.347392: funcgraph_entry:                   |                dbuf_read() {
+           zpool-23936 [010] 63346.347392: funcgraph_entry:        0.467 us   |                  zrl_add();
+           zpool-23936 [010] 63346.347393: funcgraph_entry:        0.536 us   |                  RW_WRITE_HELD();
+           zpool-23936 [010] 63346.347394: funcgraph_entry:        0.407 us   |                  zrl_remove();
+           zpool-23936 [010] 63346.347395: funcgraph_exit:         3.163 us   |                }
+           zpool-23936 [010] 63346.347395: funcgraph_entry:        0.452 us   |                dnode_rele();
+           zpool-23936 [010] 63346.347396: funcgraph_exit:       + 33.317 us  |              }
+           zpool-23936 [010] 63346.347396: funcgraph_entry:        0.410 us   |              dmu_buf_get_user();
+           zpool-23936 [010] 63346.347397: funcgraph_exit:       + 35.172 us  |            }
+           zpool-23936 [010] 63346.347398: funcgraph_entry:        0.567 us   |            mze_compare();
+           zpool-23936 [010] 63346.347399: funcgraph_entry:        0.453 us   |            mzap_normalization_conflict();
+           zpool-23936 [010] 63346.347400: funcgraph_exit:       + 38.351 us  |          }
+           zpool-23936 [010] 63346.347401: funcgraph_entry:        0.406 us   |          zap_cursor_advance();
+           zpool-23936 [010] 63346.347402: funcgraph_entry:                   |          zap_cursor_retrieve() {
+           zpool-23936 [010] 63346.347402: funcgraph_entry:        0.440 us   |            mze_compare();
+           zpool-23936 [010] 63346.347403: funcgraph_entry:        0.563 us   |            mze_compare();
+           zpool-23936 [010] 63346.347404: funcgraph_entry:        0.417 us   |            mzap_normalization_conflict();
+           zpool-23936 [010] 63346.347406: funcgraph_exit:         3.588 us   |          }
+           zpool-23936 [010] 63346.347406: funcgraph_entry:        0.426 us   |          zap_cursor_advance();
+           zpool-23936 [010] 63346.347407: funcgraph_entry:                   |          zap_cursor_retrieve() {
+           zpool-23936 [010] 63346.347408: funcgraph_entry:        0.437 us   |            mze_compare();
+           zpool-23936 [010] 63346.347409: funcgraph_entry:        0.563 us   |            mze_compare();
+           zpool-23936 [010] 63346.347410: funcgraph_exit:         2.595 us   |          }
+           zpool-23936 [010] 63346.347410: funcgraph_entry:                   |          zap_cursor_fini() {
+           zpool-23936 [010] 63346.347411: funcgraph_entry:                   |            zap_unlockdir() {
+           zpool-23936 [010] 63346.347411: funcgraph_entry:                   |              dmu_buf_rele() {
+           zpool-23936 [010] 63346.347412: funcgraph_entry:                   |                dbuf_rele_and_unlock() {
+           zpool-23936 [010] 63346.347412: funcgraph_entry:        0.424 us   |                  arc_buf_freeze();
+           zpool-23936 [010] 63346.347413: funcgraph_entry:        0.446 us   |                  arc_released();
+           zpool-23936 [010] 63346.347414: funcgraph_entry:                   |                  arc_buf_remove_ref() {
+           zpool-23936 [010] 63346.347415: funcgraph_entry:        0.490 us   |                    remove_reference();
+           zpool-23936 [010] 63346.347416: funcgraph_exit:         1.723 us   |                  }
+           zpool-23936 [010] 63346.347416: funcgraph_entry:        0.457 us   |                  arc_buf_eviction_needed();
+           zpool-23936 [010] 63346.347417: funcgraph_exit:         5.381 us   |                }
+           zpool-23936 [010] 63346.347418: funcgraph_exit:         6.240 us   |              }
+           zpool-23936 [010] 63346.347418: funcgraph_exit:         7.216 us   |            }
+           zpool-23936 [010] 63346.347418: funcgraph_exit:         8.079 us   |          }
+           zpool-23936 [010] 63346.347422: funcgraph_exit:       ! 138.588 us |        }
+           zpool-23936 [010] 63346.347423: funcgraph_entry:        0.527 us   |        spa_altroot();
+           zpool-23936 [010] 63346.347424: funcgraph_entry:        0.666 us   |        spa_config_exit();
+           zpool-23936 [010] 63346.347425: funcgraph_entry:        0.453 us   |        spa_close();
+           zpool-23936 [010] 63346.347426: funcgraph_exit:       ! 336.036 us |      }
+           zpool-23936 [010] 63346.347426: funcgraph_entry:      + 20.624 us  |      put_nvlist();
+           zpool-23936 [010] 63346.347456: funcgraph_exit:       ! 366.425 us |    }
+           zpool-23936 [010] 63346.347459: funcgraph_exit:       ! 384.049 us |  }
+           zpool-23936 [010] 63346.348348: funcgraph_entry:                   |  zfsdev_ioctl() {
+           zpool-23936 [010] 63346.348353: funcgraph_entry:        4.298 us   |    get_nvlist();
+           zpool-23936 [010] 63346.348358: funcgraph_entry:        1.554 us   |    zfs_secpolicy_log_history();
+           zpool-23936 [010] 63346.348363: funcgraph_exit:       + 15.805 us  |  }
+           zpool-23936 [010] 63346.348371: funcgraph_entry:                   |  zfsdev_release() {
+           zpool-23936 [010] 63346.348372: funcgraph_entry:        0.930 us   |    zfs_onexit_destroy();
+           zpool-23936 [010] 63346.348374: funcgraph_entry:        1.002 us   |    zfs_zevent_destroy();
+           zpool-23936 [010] 63346.348375: funcgraph_exit:         4.182 us   |  }
+           zpool-23936 [010] 63346.348407: funcgraph_entry:                   |  zfsdev_release() {
+           zpool-23936 [010] 63346.348408: funcgraph_entry:        0.730 us   |    zfs_onexit_destroy();
+           zpool-23936 [010] 63346.348409: funcgraph_entry:        0.637 us   |    zfs_zevent_destroy();
+           zpool-23936 [010] 63346.348410: funcgraph_exit:         3.506 us   |  }
