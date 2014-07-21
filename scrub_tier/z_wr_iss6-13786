@@ -1,0 +1,601 @@
+      z_wr_iss/6-13786 [000] 502389.471606: funcgraph_entry:                   |  zio_execute() {
+      z_wr_iss/6-13786 [000] 502389.471608: funcgraph_entry:        0.553 us   |    spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.471610: funcgraph_entry:        0.472 us   |    spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.471611: funcgraph_entry:                   |    zio_issue_async() {
+      z_wr_iss/6-13786 [000] 502389.471611: funcgraph_entry:                   |      zio_taskq_dispatch() {
+      z_wr_iss/6-13786 [000] 502389.471612: funcgraph_entry:        6.240 us   |        spa_taskq_dispatch_ent();
+      z_wr_iss/6-13786 [000] 502389.471619: funcgraph_exit:         7.426 us   |      }
+      z_wr_iss/6-13786 [000] 502389.471619: funcgraph_exit:         8.356 us   |    }
+      z_wr_iss/6-13786 [000] 502389.471620: funcgraph_exit:       + 13.973 us  |  }
+      z_wr_iss/6-13786 [000] 502389.471624: funcgraph_entry:                   |  zio_execute() {
+      z_wr_iss/6-13786 [000] 502389.471625: funcgraph_entry:        0.613 us   |    spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.471626: funcgraph_entry:        0.619 us   |    spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.471628: funcgraph_entry:                   |    zio_write_bp_init() {
+      z_wr_iss/6-13786 [000] 502389.471629: funcgraph_entry:        1.157 us   |      zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.471631: funcgraph_entry:        0.690 us   |      zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.471632: funcgraph_entry:        1.549 us   |      zio_buf_alloc();
+      z_wr_iss/6-13786 [000] 502389.471634: funcgraph_entry:                   |      zio_compress_data() {
+      z_wr_iss/6-13786 [000] 502389.471635: funcgraph_entry:      + 51.285 us  |        lzjb_compress();
+      z_wr_iss/6-13786 [000] 502389.471687: funcgraph_exit:       + 52.975 us  |      }
+      z_wr_iss/6-13786 [000] 502389.471688: funcgraph_entry:        0.850 us   |      zio_push_transform();
+      z_wr_iss/6-13786 [000] 502389.471690: funcgraph_exit:       + 62.180 us  |    }
+      z_wr_iss/6-13786 [000] 502389.471690: funcgraph_entry:        0.426 us   |    spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.471691: funcgraph_entry:        0.417 us   |    spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.471692: funcgraph_entry:                   |    zio_checksum_generate() {
+      z_wr_iss/6-13786 [000] 502389.471692: funcgraph_entry:        1.319 us   |      zio_checksum_compute();
+      z_wr_iss/6-13786 [000] 502389.471694: funcgraph_exit:         2.262 us   |    }
+      z_wr_iss/6-13786 [000] 502389.471695: funcgraph_entry:        0.423 us   |    spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.471696: funcgraph_entry:        2.735 us   |    zio_taskq_member();
+      z_wr_iss/6-13786 [000] 502389.471699: funcgraph_entry:        0.410 us   |    spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.471700: funcgraph_entry:                   |    zio_dva_allocate() {
+      z_wr_iss/6-13786 [000] 502389.471700: funcgraph_entry:        0.420 us   |      spa_normal_class();
+      z_wr_iss/6-13786 [000] 502389.471701: funcgraph_entry:                   |      metaslab_alloc() {
+      z_wr_iss/6-13786 [000] 502389.471702: funcgraph_entry:        0.757 us   |        spa_config_enter();
+      z_wr_iss/6-13786 [000] 502389.471704: funcgraph_entry:        0.599 us   |        vdev_allocatable();
+      z_wr_iss/6-13786 [000] 502389.471705: funcgraph_entry:                   |        vdev_psize_to_asize() {
+      z_wr_iss/6-13786 [000] 502389.471705: funcgraph_entry:                   |          vdev_default_asize() {
+      z_wr_iss/6-13786 [000] 502389.471706: funcgraph_entry:        0.476 us   |            vdev_default_asize();
+      z_wr_iss/6-13786 [000] 502389.471707: funcgraph_entry:        0.424 us   |            vdev_default_asize();
+      z_wr_iss/6-13786 [000] 502389.471708: funcgraph_exit:         2.453 us   |          }
+      z_wr_iss/6-13786 [000] 502389.471709: funcgraph_exit:         4.141 us   |        }
+      z_wr_iss/6-13786 [000] 502389.471711: funcgraph_entry:        0.463 us   |        metaslab_activate();
+      z_wr_iss/6-13786 [000] 502389.471712: funcgraph_entry:                   |        space_map_alloc() {
+      z_wr_iss/6-13786 [000] 502389.471713: funcgraph_entry:                   |          metaslab_df_alloc() {
+      z_wr_iss/6-13786 [000] 502389.471713: funcgraph_entry:        0.877 us   |            metaslab_pp_maxsize();
+      z_wr_iss/6-13786 [000] 502389.471715: funcgraph_entry:                   |            metaslab_block_picker.clone.0() {
+      z_wr_iss/6-13786 [000] 502389.471715: funcgraph_entry:        0.496 us   |              space_map_seg_compare();
+      z_wr_iss/6-13786 [000] 502389.471716: funcgraph_entry:        0.436 us   |              space_map_seg_compare();
+      z_wr_iss/6-13786 [000] 502389.471717: funcgraph_exit:         2.626 us   |            }
+      z_wr_iss/6-13786 [000] 502389.471718: funcgraph_exit:         5.094 us   |          }
+      z_wr_iss/6-13786 [000] 502389.471718: funcgraph_entry:                   |          space_map_remove() {
+      z_wr_iss/6-13786 [000] 502389.471719: funcgraph_entry:                   |            space_map_find() {
+      z_wr_iss/6-13786 [000] 502389.471719: funcgraph_entry:        0.436 us   |              space_map_seg_compare();
+      z_wr_iss/6-13786 [000] 502389.471720: funcgraph_entry:        0.416 us   |              space_map_seg_compare();
+      z_wr_iss/6-13786 [000] 502389.471721: funcgraph_exit:         2.265 us   |            }
+      z_wr_iss/6-13786 [000] 502389.471722: funcgraph_entry:        0.466 us   |            metaslab_segsize_compare();
+      z_wr_iss/6-13786 [000] 502389.471723: funcgraph_exit:         4.714 us   |          }
+      z_wr_iss/6-13786 [000] 502389.471723: funcgraph_exit:       + 11.468 us  |        }
+      z_wr_iss/6-13786 [000] 502389.471724: funcgraph_entry:                   |        space_map_add() {
+      z_wr_iss/6-13786 [000] 502389.471724: funcgraph_entry:                   |          space_map_find() {
+      z_wr_iss/6-13786 [000] 502389.471725: funcgraph_entry:        0.496 us   |            space_map_seg_compare();
+      z_wr_iss/6-13786 [000] 502389.471726: funcgraph_exit:         1.440 us   |          }
+      z_wr_iss/6-13786 [000] 502389.471727: funcgraph_exit:         2.615 us   |        }
+      z_wr_iss/6-13786 [000] 502389.471727: funcgraph_entry:        0.483 us   |        vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.471728: funcgraph_entry:        0.453 us   |        vdev_allocatable();
+      z_wr_iss/6-13786 [000] 502389.471729: funcgraph_entry:                   |        vdev_psize_to_asize() {
+      z_wr_iss/6-13786 [000] 502389.471729: funcgraph_entry:                   |          vdev_default_asize() {
+      z_wr_iss/6-13786 [000] 502389.471730: funcgraph_entry:        0.410 us   |            vdev_default_asize();
+      z_wr_iss/6-13786 [000] 502389.471731: funcgraph_entry:        0.417 us   |            vdev_default_asize();
+      z_wr_iss/6-13786 [000] 502389.471732: funcgraph_exit:         2.163 us   |          }
+      z_wr_iss/6-13786 [000] 502389.471732: funcgraph_exit:         2.982 us   |        }
+      z_wr_iss/6-13786 [000] 502389.471733: funcgraph_entry:        0.407 us   |        metaslab_activate();
+      z_wr_iss/6-13786 [000] 502389.471734: funcgraph_entry:                   |        space_map_alloc() {
+      z_wr_iss/6-13786 [000] 502389.471734: funcgraph_entry:                   |          metaslab_df_alloc() {
+      z_wr_iss/6-13786 [000] 502389.471735: funcgraph_entry:        0.630 us   |            metaslab_pp_maxsize();
+      z_wr_iss/6-13786 [000] 502389.471736: funcgraph_entry:                   |            metaslab_block_picker.clone.0() {
+      z_wr_iss/6-13786 [000] 502389.471736: funcgraph_entry:        0.413 us   |              space_map_seg_compare();
+      z_wr_iss/6-13786 [000] 502389.471737: funcgraph_entry:        0.410 us   |              space_map_seg_compare();
+      z_wr_iss/6-13786 [000] 502389.471738: funcgraph_exit:         2.339 us   |            }
+      z_wr_iss/6-13786 [000] 502389.471738: funcgraph_exit:         4.245 us   |          }
+      z_wr_iss/6-13786 [000] 502389.471739: funcgraph_entry:                   |          space_map_remove() {
+      z_wr_iss/6-13786 [000] 502389.471739: funcgraph_entry:                   |            space_map_find() {
+      z_wr_iss/6-13786 [000] 502389.471740: funcgraph_entry:        0.410 us   |              space_map_seg_compare();
+      z_wr_iss/6-13786 [000] 502389.471741: funcgraph_entry:        0.415 us   |              space_map_seg_compare();
+      z_wr_iss/6-13786 [000] 502389.471741: funcgraph_exit:         2.103 us   |            }
+      z_wr_iss/6-13786 [000] 502389.471742: funcgraph_entry:        0.410 us   |            metaslab_segsize_compare();
+      z_wr_iss/6-13786 [000] 502389.471743: funcgraph_exit:         4.158 us   |          }
+      z_wr_iss/6-13786 [000] 502389.471743: funcgraph_exit:         9.695 us   |        }
+      z_wr_iss/6-13786 [000] 502389.471744: funcgraph_entry:                   |        vdev_dirty() {
+      z_wr_iss/6-13786 [000] 502389.471745: funcgraph_entry:        0.629 us   |          txg_list_add();
+      z_wr_iss/6-13786 [000] 502389.471746: funcgraph_entry:        0.550 us   |          txg_list_add();
+      z_wr_iss/6-13786 [000] 502389.471747: funcgraph_exit:         2.499 us   |        }
+      z_wr_iss/6-13786 [000] 502389.471747: funcgraph_entry:                   |        space_map_add() {
+      z_wr_iss/6-13786 [000] 502389.471748: funcgraph_entry:        0.480 us   |          space_map_find();
+      z_wr_iss/6-13786 [000] 502389.471749: funcgraph_exit:         2.046 us   |        }
+      z_wr_iss/6-13786 [000] 502389.471750: funcgraph_entry:        0.416 us   |        vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.471751: funcgraph_entry:        0.403 us   |        vdev_allocatable();
+      z_wr_iss/6-13786 [000] 502389.471751: funcgraph_entry:                   |        vdev_psize_to_asize() {
+      z_wr_iss/6-13786 [000] 502389.471752: funcgraph_entry:                   |          vdev_default_asize() {
+      z_wr_iss/6-13786 [000] 502389.471752: funcgraph_entry:        0.413 us   |            vdev_default_asize();
+      z_wr_iss/6-13786 [000] 502389.471754: funcgraph_entry:        0.413 us   |            vdev_default_asize();
+      z_wr_iss/6-13786 [000] 502389.471755: funcgraph_exit:         2.719 us   |          }
+      z_wr_iss/6-13786 [000] 502389.471755: funcgraph_exit:         3.595 us   |        }
+      z_wr_iss/6-13786 [000] 502389.471756: funcgraph_entry:        0.483 us   |        metaslab_activate();
+      z_wr_iss/6-13786 [000] 502389.471757: funcgraph_entry:                   |        space_map_alloc() {
+      z_wr_iss/6-13786 [000] 502389.471758: funcgraph_entry:                   |          metaslab_df_alloc() {
+      z_wr_iss/6-13786 [000] 502389.471758: funcgraph_entry:        0.633 us   |            metaslab_pp_maxsize();
+      z_wr_iss/6-13786 [000] 502389.471759: funcgraph_entry:                   |            metaslab_block_picker.clone.0() {
+      z_wr_iss/6-13786 [000] 502389.471760: funcgraph_entry:        0.434 us   |              space_map_seg_compare();
+      z_wr_iss/6-13786 [000] 502389.471761: funcgraph_exit:         1.436 us   |            }
+      z_wr_iss/6-13786 [000] 502389.471761: funcgraph_exit:         3.463 us   |          }
+      z_wr_iss/6-13786 [000] 502389.471762: funcgraph_entry:                   |          space_map_remove() {
+      z_wr_iss/6-13786 [000] 502389.471762: funcgraph_entry:                   |            space_map_find() {
+      z_wr_iss/6-13786 [000] 502389.471762: funcgraph_entry:        0.430 us   |              space_map_seg_compare();
+      z_wr_iss/6-13786 [000] 502389.471763: funcgraph_exit:         1.329 us   |            }
+      z_wr_iss/6-13786 [000] 502389.471764: funcgraph_entry:        0.417 us   |            metaslab_segsize_compare();
+      z_wr_iss/6-13786 [000] 502389.471765: funcgraph_exit:         3.386 us   |          }
+      z_wr_iss/6-13786 [000] 502389.471765: funcgraph_exit:         8.169 us   |        }
+      z_wr_iss/6-13786 [000] 502389.471766: funcgraph_entry:                   |        vdev_dirty() {
+      z_wr_iss/6-13786 [000] 502389.471766: funcgraph_entry:        0.613 us   |          txg_list_add();
+      z_wr_iss/6-13786 [000] 502389.471767: funcgraph_entry:        0.442 us   |          txg_list_add();
+      z_wr_iss/6-13786 [000] 502389.471768: funcgraph_exit:         2.299 us   |        }
+      z_wr_iss/6-13786 [000] 502389.471769: funcgraph_entry:                   |        space_map_add() {
+      z_wr_iss/6-13786 [000] 502389.471769: funcgraph_entry:        0.459 us   |          space_map_find();
+      z_wr_iss/6-13786 [000] 502389.471814: funcgraph_exit:       + 18.051 us  |        }
+      z_wr_iss/6-13786 [000] 502389.471818: funcgraph_entry:        0.863 us   |        spa_config_exit();
+      z_wr_iss/6-13786 [000] 502389.471819: funcgraph_exit:       + 91.095 us  |      }
+      z_wr_iss/6-13786 [000] 502389.471820: funcgraph_exit:       + 93.092 us  |    }
+      z_wr_iss/6-13786 [000] 502389.471821: funcgraph_entry:        0.412 us   |    spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.471821: funcgraph_entry:        0.410 us   |    spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.471823: funcgraph_entry:                   |    zio_ready() {
+      z_wr_iss/6-13786 [000] 502389.471823: funcgraph_entry:        0.526 us   |      zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.471824: funcgraph_entry:        0.454 us   |      zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.471825: funcgraph_entry:                   |      arc_write_ready() {
+      z_wr_iss/6-13786 [000] 502389.471826: funcgraph_entry:                   |        dbuf_write_ready() {
+      z_wr_iss/6-13786 [000] 502389.471826: funcgraph_entry:        0.572 us   |          zrl_add();
+      z_wr_iss/6-13786 [000] 502389.471827: funcgraph_entry:                   |          bp_get_dsize_sync() {
+      z_wr_iss/6-13786 [000] 502389.471828: funcgraph_entry:                   |            dva_get_dsize_sync() {
+      z_wr_iss/6-13786 [000] 502389.471828: funcgraph_entry:        0.503 us   |              vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.471829: funcgraph_exit:         1.512 us   |            }
+      z_wr_iss/6-13786 [000] 502389.471830: funcgraph_entry:                   |            dva_get_dsize_sync() {
+      z_wr_iss/6-13786 [000] 502389.471830: funcgraph_entry:        0.413 us   |              vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.471831: funcgraph_exit:         1.305 us   |            }
+      z_wr_iss/6-13786 [000] 502389.471832: funcgraph_entry:                   |            dva_get_dsize_sync() {
+      z_wr_iss/6-13786 [000] 502389.471832: funcgraph_entry:        0.417 us   |              vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.471833: funcgraph_exit:         1.317 us   |            }
+      z_wr_iss/6-13786 [000] 502389.471833: funcgraph_exit:         5.904 us   |          }
+      z_wr_iss/6-13786 [000] 502389.471834: funcgraph_entry:                   |          bp_get_dsize_sync() {
+      z_wr_iss/6-13786 [000] 502389.471834: funcgraph_entry:                   |            dva_get_dsize_sync() {
+      z_wr_iss/6-13786 [000] 502389.471835: funcgraph_entry:        0.415 us   |              vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.471836: funcgraph_exit:         1.249 us   |            }
+      z_wr_iss/6-13786 [000] 502389.471836: funcgraph_entry:                   |            dva_get_dsize_sync() {
+      z_wr_iss/6-13786 [000] 502389.471836: funcgraph_entry:        0.417 us   |              vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.471837: funcgraph_exit:         1.246 us   |            }
+      z_wr_iss/6-13786 [000] 502389.471838: funcgraph_entry:                   |            dva_get_dsize_sync() {
+      z_wr_iss/6-13786 [000] 502389.471838: funcgraph_entry:        0.410 us   |              vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.471839: funcgraph_exit:         1.236 us   |            }
+      z_wr_iss/6-13786 [000] 502389.471839: funcgraph_exit:         5.470 us   |          }
+      z_wr_iss/6-13786 [000] 502389.471840: funcgraph_entry:                   |          dnode_diduse_space() {
+      z_wr_iss/6-13786 [000] 502389.471841: funcgraph_entry:        0.463 us   |            spa_version();
+      z_wr_iss/6-13786 [000] 502389.471841: funcgraph_exit:         1.626 us   |          }
+      z_wr_iss/6-13786 [000] 502389.471842: funcgraph_entry:        0.880 us   |          zrl_remove();
+      z_wr_iss/6-13786 [000] 502389.471843: funcgraph_exit:       + 17.761 us  |        }
+      z_wr_iss/6-13786 [000] 502389.471844: funcgraph_entry:        0.540 us   |        arc_cksum_compute();
+      z_wr_iss/6-13786 [000] 502389.471845: funcgraph_exit:       + 19.987 us  |      }
+      z_wr_iss/6-13786 [000] 502389.471846: funcgraph_entry:        0.527 us   |      zio_walk_parents();
+      z_wr_iss/6-13786 [000] 502389.471847: funcgraph_entry:        0.490 us   |      zio_walk_parents();
+      z_wr_iss/6-13786 [000] 502389.471848: funcgraph_exit:       + 25.451 us  |    }
+      z_wr_iss/6-13786 [000] 502389.471849: funcgraph_entry:        0.410 us   |    spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.471850: funcgraph_entry:        1.740 us   |    zio_taskq_member();
+      z_wr_iss/6-13786 [000] 502389.471852: funcgraph_entry:        0.410 us   |    spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.471853: funcgraph_entry:                   |    zio_vdev_io_start() {
+      z_wr_iss/6-13786 [000] 502389.471853: funcgraph_entry:        0.696 us   |      spa_config_enter();
+      z_wr_iss/6-13786 [000] 502389.471854: funcgraph_entry:                   |      vdev_mirror_io_start() {
+      z_wr_iss/6-13786 [000] 502389.471855: funcgraph_entry:                   |        vdev_mirror_map_alloc() {
+      z_wr_iss/6-13786 [000] 502389.471856: funcgraph_entry:        5.591 us   |          spa_get_random();
+      z_wr_iss/6-13786 [000] 502389.471862: funcgraph_entry:        0.420 us   |          vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.471863: funcgraph_entry:        0.473 us   |          vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.471864: funcgraph_entry:        0.417 us   |          vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.471865: funcgraph_exit:       + 10.062 us  |        }
+      z_wr_iss/6-13786 [000] 502389.471866: funcgraph_entry:                   |        zio_vdev_child_io() {
+      z_wr_iss/6-13786 [000] 502389.471866: funcgraph_entry:                   |          zio_create() {
+      z_wr_iss/6-13786 [000] 502389.471867: funcgraph_entry:        0.882 us   |            zio_add_child();
+      z_wr_iss/6-13786 [000] 502389.471869: funcgraph_exit:         2.476 us   |          }
+      z_wr_iss/6-13786 [000] 502389.471869: funcgraph_exit:         3.486 us   |        }
+      z_wr_iss/6-13786 [000] 502389.471870: funcgraph_entry:                   |        zio_nowait() {
+      z_wr_iss/6-13786 [000] 502389.471870: funcgraph_entry:        0.467 us   |          spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.471871: funcgraph_entry:        0.420 us   |          spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.471872: funcgraph_entry:                   |          zio_vdev_io_start() {
+      z_wr_iss/6-13786 [000] 502389.471873: funcgraph_entry:        0.634 us   |            zio_buf_alloc();
+      z_wr_iss/6-13786 [000] 502389.471875: funcgraph_entry:        0.979 us   |            zio_push_transform();
+      z_wr_iss/6-13786 [000] 502389.471877: funcgraph_entry:        0.640 us   |            spa_writeable();
+      z_wr_iss/6-13786 [000] 502389.471879: funcgraph_entry:                   |            vdev_tier_io_start() {
+      z_wr_iss/6-13786 [000] 502389.471880: funcgraph_entry:                   |              vdev_tier_map_alloc() {
+      z_wr_iss/6-13786 [000] 502389.471881: funcgraph_entry:        0.887 us   |                vdev_readable();
+      z_wr_iss/6-13786 [000] 502389.471883: funcgraph_entry:        1.000 us   |                vdev_readable();
+      z_wr_iss/6-13786 [000] 502389.471886: funcgraph_exit:         5.921 us   |              }
+      z_wr_iss/6-13786 [000] 502389.471893: funcgraph_entry:                   |              zio_vdev_child_io() {
+      z_wr_iss/6-13786 [000] 502389.471894: funcgraph_entry:                   |                zio_create() {
+      z_wr_iss/6-13786 [000] 502389.471896: funcgraph_entry:        1.462 us   |                  zio_add_child();
+      z_wr_iss/6-13786 [000] 502389.471898: funcgraph_exit:         3.928 us   |                }
+      z_wr_iss/6-13786 [000] 502389.471899: funcgraph_exit:         5.664 us   |              }
+      z_wr_iss/6-13786 [000] 502389.471899: funcgraph_entry:                   |              zio_nowait() {
+      z_wr_iss/6-13786 [000] 502389.471900: funcgraph_entry:        0.609 us   |                spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.471902: funcgraph_entry:        0.573 us   |                spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.471903: funcgraph_entry:                   |                zio_vdev_io_start() {
+      z_wr_iss/6-13786 [000] 502389.471904: funcgraph_entry:        0.576 us   |                  spa_writeable();
+      z_wr_iss/6-13786 [000] 502389.471905: funcgraph_entry:                   |                  vdev_queue_io() {
+      z_wr_iss/6-13786 [000] 502389.471907: funcgraph_entry:                   |                    vdev_queue_io_to_issue() {
+      z_wr_iss/6-13786 [000] 502389.471908: funcgraph_entry:        0.659 us   |                      zio_buf_alloc();
+      z_wr_iss/6-13786 [000] 502389.471909: funcgraph_entry:        0.417 us   |                      vdev_queue_offset_compare();
+      z_wr_iss/6-13786 [000] 502389.471910: funcgraph_entry:        0.669 us   |                      zio_buf_free();
+      z_wr_iss/6-13786 [000] 502389.471912: funcgraph_entry:        0.833 us   |                      vdev_queue_io_remove();
+      z_wr_iss/6-13786 [000] 502389.471913: funcgraph_exit:         6.137 us   |                    }
+      z_wr_iss/6-13786 [000] 502389.471914: funcgraph_exit:         8.782 us   |                  }
+      z_wr_iss/6-13786 [000] 502389.471915: funcgraph_entry:        0.582 us   |                  vdev_accessible();
+      z_wr_iss/6-13786 [000] 502389.471916: funcgraph_entry:                   |                  vdev_disk_io_start() {
+      z_wr_iss/6-13786 [000] 502389.471916: funcgraph_entry:                   |                    __vdev_disk_physio() {
+      z_wr_iss/6-13786 [000] 502389.471935: funcgraph_entry:        1.132 us   |                      vdev_disk_dio_put();
+      z_wr_iss/6-13786 [000] 502389.471936: funcgraph_exit:       + 19.896 us  |                    }
+      z_wr_iss/6-13786 [000] 502389.471937: funcgraph_exit:       + 20.840 us  |                  }
+      z_wr_iss/6-13786 [000] 502389.471937: funcgraph_exit:       + 33.651 us  |                }
+      z_wr_iss/6-13786 [000] 502389.471937: funcgraph_exit:       + 38.061 us  |              }
+      z_wr_iss/6-13786 [000] 502389.471939: funcgraph_exit:       + 60.741 us  |            }
+      z_wr_iss/6-13786 [000] 502389.471940: funcgraph_exit:       + 67.637 us  |          }
+      z_wr_iss/6-13786 [000] 502389.471940: funcgraph_entry:        0.433 us   |          spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.471941: funcgraph_entry:        0.422 us   |          spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.471942: funcgraph_entry:                   |          zio_vdev_io_done() {
+      z_wr_iss/6-13786 [000] 502389.471943: funcgraph_entry:        0.483 us   |            zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.471944: funcgraph_exit:         1.349 us   |          }
+      z_wr_iss/6-13786 [000] 502389.471944: funcgraph_exit:       + 74.310 us  |        }
+      z_wr_iss/6-13786 [000] 502389.471944: funcgraph_entry:                   |        zio_vdev_child_io() {
+      z_wr_iss/6-13786 [000] 502389.471945: funcgraph_entry:                   |          zio_create() {
+      z_wr_iss/6-13786 [000] 502389.471946: funcgraph_entry:        0.780 us   |            zio_add_child();
+      z_wr_iss/6-13786 [000] 502389.471947: funcgraph_exit:         2.262 us   |          }
+      z_wr_iss/6-13786 [000] 502389.471948: funcgraph_exit:         3.125 us   |        }
+      z_wr_iss/6-13786 [000] 502389.471948: funcgraph_entry:                   |        zio_nowait() {
+      z_wr_iss/6-13786 [000] 502389.471948: funcgraph_entry:        0.414 us   |          spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.471949: funcgraph_entry:        0.422 us   |          spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.471950: funcgraph_entry:                   |          zio_vdev_io_start() {
+      z_wr_iss/6-13786 [000] 502389.471951: funcgraph_entry:        0.624 us   |            zio_buf_alloc();
+      z_wr_iss/6-13786 [000] 502389.471953: funcgraph_entry:        0.640 us   |            zio_push_transform();
+      z_wr_iss/6-13786 [000] 502389.471954: funcgraph_entry:        0.536 us   |            spa_writeable();
+      z_wr_iss/6-13786 [000] 502389.471955: funcgraph_entry:                   |            vdev_tier_io_start() {
+      z_wr_iss/6-13786 [000] 502389.471955: funcgraph_entry:                   |              vdev_tier_map_alloc() {
+      z_wr_iss/6-13786 [000] 502389.471956: funcgraph_entry:        0.433 us   |                vdev_readable();
+      z_wr_iss/6-13786 [000] 502389.471957: funcgraph_entry:        0.647 us   |                vdev_readable();
+      z_wr_iss/6-13786 [000] 502389.471958: funcgraph_exit:         3.058 us   |              }
+      z_wr_iss/6-13786 [000] 502389.471962: funcgraph_entry:                   |              zio_vdev_child_io() {
+      z_wr_iss/6-13786 [000] 502389.471963: funcgraph_entry:                   |                zio_create() {
+      z_wr_iss/6-13786 [000] 502389.471965: funcgraph_entry:        1.286 us   |                  zio_add_child();
+      z_wr_iss/6-13786 [000] 502389.471967: funcgraph_exit:         4.494 us   |                }
+      z_wr_iss/6-13786 [000] 502389.471968: funcgraph_exit:         6.031 us   |              }
+      z_wr_iss/6-13786 [000] 502389.471969: funcgraph_entry:                   |              zio_nowait() {
+      z_wr_iss/6-13786 [000] 502389.471969: funcgraph_entry:        0.860 us   |                spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.471971: funcgraph_entry:        0.424 us   |                spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.471972: funcgraph_entry:                   |                zio_vdev_io_start() {
+      z_wr_iss/6-13786 [000] 502389.471972: funcgraph_entry:        0.406 us   |                  spa_writeable();
+      z_wr_iss/6-13786 [000] 502389.471973: funcgraph_entry:                   |                  vdev_queue_io() {
+      z_wr_iss/6-13786 [000] 502389.471974: funcgraph_entry:        0.589 us   |                    vdev_queue_offset_compare();
+      z_wr_iss/6-13786 [000] 502389.471975: funcgraph_entry:        0.846 us   |                    vdev_queue_io_to_issue();
+      z_wr_iss/6-13786 [000] 502389.471977: funcgraph_exit:         3.695 us   |                  }
+      z_wr_iss/6-13786 [000] 502389.471977: funcgraph_exit:         5.580 us   |                }
+      z_wr_iss/6-13786 [000] 502389.471978: funcgraph_exit:         8.923 us   |              }
+      z_wr_iss/6-13786 [000] 502389.471979: funcgraph_exit:       + 24.824 us  |            }
+      z_wr_iss/6-13786 [000] 502389.471980: funcgraph_exit:       + 29.703 us  |          }
+      z_wr_iss/6-13786 [000] 502389.471980: funcgraph_entry:        0.413 us   |          spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.471981: funcgraph_entry:        0.410 us   |          spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.471982: funcgraph_entry:                   |          zio_vdev_io_done() {
+      z_wr_iss/6-13786 [000] 502389.471983: funcgraph_entry:        0.460 us   |            zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.471983: funcgraph_exit:         1.339 us   |          }
+      z_wr_iss/6-13786 [000] 502389.471984: funcgraph_exit:       + 35.863 us  |        }
+      z_wr_iss/6-13786 [000] 502389.471984: funcgraph_entry:                   |        zio_vdev_child_io() {
+      z_wr_iss/6-13786 [000] 502389.471985: funcgraph_entry:                   |          zio_create() {
+      z_wr_iss/6-13786 [000] 502389.471986: funcgraph_entry:        0.906 us   |            zio_add_child();
+      z_wr_iss/6-13786 [000] 502389.471987: funcgraph_exit:         2.406 us   |          }
+      z_wr_iss/6-13786 [000] 502389.471988: funcgraph_exit:         3.301 us   |        }
+      z_wr_iss/6-13786 [000] 502389.471988: funcgraph_entry:                   |        zio_nowait() {
+      z_wr_iss/6-13786 [000] 502389.471988: funcgraph_entry:                   |          spa_get_dsl() {
+      z_wr_iss/6-13786 [000] 502389.471997: funcgraph_entry:                   |            vdev_disk_physio_completion() {
+      z_wr_iss/6-13786 [000] 502389.471998: funcgraph_entry:                   |              vdev_disk_dio_put() {
+      z_wr_iss/6-13786 [000] 502389.471999: funcgraph_entry:        1.929 us   |                vdev_disk_dio_free();
+      z_wr_iss/6-13786 [000] 502389.472002: funcgraph_entry:                   |                zio_interrupt() {
+      z_wr_iss/6-13786 [000] 502389.472002: funcgraph_entry:                   |                  zio_taskq_dispatch() {
+      z_wr_iss/6-13786 [000] 502389.472003: funcgraph_entry:        4.168 us   |                    spa_taskq_dispatch_ent();
+      z_wr_iss/6-13786 [000] 502389.472008: funcgraph_exit:         5.494 us   |                  }
+      z_wr_iss/6-13786 [000] 502389.472008: funcgraph_exit:         6.590 us   |                }
+      z_wr_iss/6-13786 [000] 502389.472009: funcgraph_exit:       + 11.435 us  |              }
+      z_wr_iss/6-13786 [000] 502389.472009: funcgraph_exit:       + 12.787 us  |            }
+      z_wr_iss/6-13786 [000] 502389.472017: funcgraph_exit:       + 28.875 us  |          }
+      z_wr_iss/6-13786 [000] 502389.472019: funcgraph_entry:        0.636 us   |          spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.472020: funcgraph_entry:                   |          zio_vdev_io_start() {
+      z_wr_iss/6-13786 [000] 502389.472021: funcgraph_entry:        0.783 us   |            zio_buf_alloc();
+      z_wr_iss/6-13786 [000] 502389.472024: funcgraph_entry:        1.443 us   |            zio_push_transform();
+      z_wr_iss/6-13786 [000] 502389.472026: funcgraph_entry:        1.026 us   |            spa_writeable();
+      z_wr_iss/6-13786 [000] 502389.472028: funcgraph_entry:                   |            vdev_tier_io_start() {
+      z_wr_iss/6-13786 [000] 502389.472029: funcgraph_entry:                   |              vdev_tier_map_alloc() {
+      z_wr_iss/6-13786 [000] 502389.472030: funcgraph_entry:        0.797 us   |                vdev_readable();
+      z_wr_iss/6-13786 [000] 502389.472032: funcgraph_entry:        0.894 us   |                vdev_readable();
+      z_wr_iss/6-13786 [000] 502389.472034: funcgraph_exit:         5.527 us   |              }
+      z_wr_iss/6-13786 [000] 502389.472038: funcgraph_entry:                   |              zio_vdev_child_io() {
+      z_wr_iss/6-13786 [000] 502389.472039: funcgraph_entry:                   |                zio_create() {
+      z_wr_iss/6-13786 [000] 502389.472041: funcgraph_entry:        1.462 us   |                  zio_add_child();
+      z_wr_iss/6-13786 [000] 502389.472043: funcgraph_exit:         4.191 us   |                }
+      z_wr_iss/6-13786 [000] 502389.472044: funcgraph_exit:         5.817 us   |              }
+      z_wr_iss/6-13786 [000] 502389.472045: funcgraph_entry:                   |              zio_nowait() {
+      z_wr_iss/6-13786 [000] 502389.472045: funcgraph_entry:        0.796 us   |                spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.472047: funcgraph_entry:        0.850 us   |                spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.472049: funcgraph_entry:                   |                zio_vdev_io_start() {
+      z_wr_iss/6-13786 [000] 502389.472049: funcgraph_entry:        0.676 us   |                  spa_writeable();
+      z_wr_iss/6-13786 [000] 502389.472051: funcgraph_entry:                   |                  vdev_queue_io() {
+      z_wr_iss/6-13786 [000] 502389.472052: funcgraph_entry:        1.223 us   |                    vdev_queue_offset_compare();
+      z_wr_iss/6-13786 [000] 502389.472054: funcgraph_entry:        0.793 us   |                    vdev_queue_offset_compare();
+      z_wr_iss/6-13786 [000] 502389.472056: funcgraph_entry:        0.889 us   |                    vdev_queue_offset_compare();
+      z_wr_iss/6-13786 [000] 502389.472058: funcgraph_entry:        1.370 us   |                    vdev_queue_io_to_issue();
+      z_wr_iss/6-13786 [000] 502389.472061: funcgraph_exit:         9.418 us   |                  }
+      z_wr_iss/6-13786 [000] 502389.472061: funcgraph_exit:       + 12.594 us  |                }
+      z_wr_iss/6-13786 [000] 502389.472062: funcgraph_exit:       + 17.398 us  |              }
+      z_wr_iss/6-13786 [000] 502389.472071: funcgraph_exit:       + 43.269 us  |            }
+      z_wr_iss/6-13786 [000] 502389.472072: funcgraph_exit:       + 51.685 us  |          }
+      z_wr_iss/6-13786 [000] 502389.472072: funcgraph_entry:        0.669 us   |          spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.472074: funcgraph_entry:        0.830 us   |          spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.472075: funcgraph_entry:                   |          zio_vdev_io_done() {
+      z_wr_iss/6-13786 [000] 502389.472076: funcgraph_entry:        0.809 us   |            zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.472078: funcgraph_exit:         2.316 us   |          }
+      z_wr_iss/6-13786 [000] 502389.472078: funcgraph_exit:       + 90.269 us  |        }
+      z_wr_iss/6-13786 [000] 502389.472079: funcgraph_exit:       ! 224.653 us |      }
+      z_wr_iss/6-13786 [000] 502389.472080: funcgraph_exit:       ! 227.279 us |    }
+      z_wr_iss/6-13786 [000] 502389.472081: funcgraph_entry:        0.680 us   |    spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.472082: funcgraph_entry:        0.656 us   |    spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.472084: funcgraph_entry:                   |    zio_vdev_io_done() {
+      z_wr_iss/6-13786 [000] 502389.472084: funcgraph_entry:        0.766 us   |      zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.472086: funcgraph_exit:         2.216 us   |    }
+      z_wr_iss/6-13786 [000] 502389.472086: funcgraph_exit:       ! 435.517 us |  }
+      z_wr_iss/6-13786 [000] 502389.472088: funcgraph_entry:                   |  zio_execute() {
+      z_wr_iss/6-13786 [000] 502389.472089: funcgraph_entry:        0.773 us   |    spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.472090: funcgraph_entry:        0.660 us   |    spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.472092: funcgraph_entry:                   |    zio_write_bp_init() {
+      z_wr_iss/6-13786 [000] 502389.472092: funcgraph_entry:        0.903 us   |      zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.472095: funcgraph_entry:        1.359 us   |      zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.472096: funcgraph_exit:         4.388 us   |    }
+      z_wr_iss/6-13786 [000] 502389.472097: funcgraph_exit:         8.813 us   |  }
+      z_wr_iss/6-13786 [000] 502389.472098: funcgraph_entry:                   |  zio_execute() {
+      z_wr_iss/6-13786 [000] 502389.472099: funcgraph_entry:        0.649 us   |    spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.472100: funcgraph_entry:        0.730 us   |    spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.472102: funcgraph_entry:                   |    zio_issue_async() {
+      z_wr_iss/6-13786 [000] 502389.472102: funcgraph_entry:                   |      zio_taskq_dispatch() {
+      z_wr_iss/6-13786 [000] 502389.472103: funcgraph_entry:        6.004 us   |        spa_taskq_dispatch_ent();
+      z_wr_iss/6-13786 [000] 502389.472110: funcgraph_exit:         7.443 us   |      }
+      z_wr_iss/6-13786 [000] 502389.472111: funcgraph_exit:         8.813 us   |    }
+      z_wr_iss/6-13786 [000] 502389.472111: funcgraph_exit:       + 13.134 us  |  }
+      z_wr_iss/6-13786 [000] 502389.472112: funcgraph_entry:                   |  zio_execute() {
+      z_wr_iss/6-13786 [000] 502389.472113: funcgraph_entry:        0.659 us   |    spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.472114: funcgraph_entry:        0.653 us   |    spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.472116: funcgraph_entry:                   |    zio_write_bp_init() {
+      z_wr_iss/6-13786 [000] 502389.472123: funcgraph_entry:                   |      vdev_disk_physio_completion() {
+      z_wr_iss/6-13786 [000] 502389.472123: funcgraph_entry:                   |        vdev_disk_dio_put() {
+      z_wr_iss/6-13786 [000] 502389.472124: funcgraph_entry:        1.380 us   |          vdev_disk_dio_free();
+      z_wr_iss/6-13786 [000] 502389.472126: funcgraph_entry:                   |          zio_interrupt() {
+      z_wr_iss/6-13786 [000] 502389.472127: funcgraph_entry:                   |            zio_taskq_dispatch() {
+      z_wr_iss/6-13786 [000] 502389.472128: funcgraph_entry:        3.491 us   |              spa_taskq_dispatch_ent();
+      z_wr_iss/6-13786 [000] 502389.472132: funcgraph_exit:         4.858 us   |            }
+      z_wr_iss/6-13786 [000] 502389.472132: funcgraph_exit:         6.121 us   |          }
+      z_wr_iss/6-13786 [000] 502389.472133: funcgraph_exit:         9.609 us   |        }
+      z_wr_iss/6-13786 [000] 502389.472134: funcgraph_exit:       + 11.085 us  |      }
+      z_wr_iss/6-13786 [000] 502389.472139: funcgraph_entry:        0.800 us   |      zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.472140: funcgraph_entry:        1.127 us   |      zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.472142: funcgraph_exit:       + 26.410 us  |    }
+      z_wr_iss/6-13786 [000] 502389.472143: funcgraph_exit:       + 30.671 us  |  }
+      z_wr_iss/6-13786 [000] 502389.479983: funcgraph_entry:                   |  zio_execute() {
+      z_wr_iss/6-13786 [000] 502389.479983: funcgraph_entry:        0.217 us   |    spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.479983: funcgraph_entry:        0.215 us   |    spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.479984: funcgraph_entry:                   |    zio_issue_async() {
+      z_wr_iss/6-13786 [000] 502389.479984: funcgraph_entry:                   |      zio_taskq_dispatch() {
+      z_wr_iss/6-13786 [000] 502389.479984: funcgraph_entry:        1.083 us   |        spa_taskq_dispatch_ent();
+      z_wr_iss/6-13786 [000] 502389.479986: funcgraph_exit:         1.620 us   |      }
+      z_wr_iss/6-13786 [000] 502389.479986: funcgraph_exit:         2.126 us   |    }
+      z_wr_iss/6-13786 [000] 502389.479986: funcgraph_exit:         3.760 us   |  }
+      z_wr_iss/6-13786 [000] 502389.479987: funcgraph_entry:                   |  zio_execute() {
+      z_wr_iss/6-13786 [000] 502389.479988: funcgraph_entry:        0.396 us   |    spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.479989: funcgraph_entry:        0.467 us   |    spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.479990: funcgraph_entry:                   |    zio_write_bp_init() {
+      z_wr_iss/6-13786 [000] 502389.479990: funcgraph_entry:        0.358 us   |      zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.479991: funcgraph_entry:        0.280 us   |      zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.479991: funcgraph_entry:        0.241 us   |      spa_sync_pass();
+      z_wr_iss/6-13786 [000] 502389.479992: funcgraph_entry:        0.417 us   |      zio_buf_alloc();
+      z_wr_iss/6-13786 [000] 502389.479993: funcgraph_entry:                   |      zio_compress_data() {
+      z_wr_iss/6-13786 [000] 502389.479993: funcgraph_entry:        7.997 us   |        lzjb_compress();
+      z_wr_iss/6-13786 [000] 502389.480001: funcgraph_exit:         8.678 us   |      }
+      z_wr_iss/6-13786 [000] 502389.480001: funcgraph_entry:        0.388 us   |      zio_push_transform();
+      z_wr_iss/6-13786 [000] 502389.480002: funcgraph_exit:       + 12.627 us  |    }
+      z_wr_iss/6-13786 [000] 502389.480002: funcgraph_entry:        0.214 us   |    spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.480003: funcgraph_entry:        0.212 us   |    spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.480004: funcgraph_entry:                   |    zio_checksum_generate() {
+      z_wr_iss/6-13786 [000] 502389.480004: funcgraph_entry:        0.481 us   |      zio_checksum_compute();
+      z_wr_iss/6-13786 [000] 502389.480005: funcgraph_exit:         1.328 us   |    }
+      z_wr_iss/6-13786 [000] 502389.480005: funcgraph_entry:        0.219 us   |    spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.480005: funcgraph_entry:        0.237 us   |    spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.480006: funcgraph_entry:                   |    zio_ready() {
+      z_wr_iss/6-13786 [000] 502389.480006: funcgraph_entry:        0.236 us   |      zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.480007: funcgraph_entry:        0.236 us   |      zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.480007: funcgraph_entry:                   |      arc_write_ready() {
+      z_wr_iss/6-13786 [000] 502389.480007: funcgraph_entry:                   |        dbuf_write_ready() {
+      z_wr_iss/6-13786 [000] 502389.480008: funcgraph_entry:        0.338 us   |          zrl_add();
+      z_wr_iss/6-13786 [000] 502389.480008: funcgraph_entry:                   |          bp_get_dsize_sync() {
+      z_wr_iss/6-13786 [000] 502389.480009: funcgraph_entry:                   |            dva_get_dsize_sync() {
+      z_wr_iss/6-13786 [000] 502389.480009: funcgraph_entry:        0.219 us   |              vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.480009: funcgraph_exit:         0.718 us   |            }
+      z_wr_iss/6-13786 [000] 502389.480009: funcgraph_entry:                   |            dva_get_dsize_sync() {
+      z_wr_iss/6-13786 [000] 502389.480010: funcgraph_entry:        0.215 us   |              vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.480010: funcgraph_exit:         0.653 us   |            }
+      z_wr_iss/6-13786 [000] 502389.480010: funcgraph_entry:                   |            dva_get_dsize_sync() {
+      z_wr_iss/6-13786 [000] 502389.480011: funcgraph_entry:        0.217 us   |              vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.480011: funcgraph_exit:         0.654 us   |            }
+      z_wr_iss/6-13786 [000] 502389.480011: funcgraph_exit:         2.964 us   |          }
+      z_wr_iss/6-13786 [000] 502389.480011: funcgraph_entry:                   |          bp_get_dsize_sync() {
+      z_wr_iss/6-13786 [000] 502389.480012: funcgraph_entry:                   |            dva_get_dsize_sync() {
+      z_wr_iss/6-13786 [000] 502389.480012: funcgraph_entry:        0.212 us   |              vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.480012: funcgraph_exit:         0.639 us   |            }
+      z_wr_iss/6-13786 [000] 502389.480013: funcgraph_entry:                   |            dva_get_dsize_sync() {
+      z_wr_iss/6-13786 [000] 502389.480013: funcgraph_entry:        0.210 us   |              vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.480013: funcgraph_exit:         0.683 us   |            }
+      z_wr_iss/6-13786 [000] 502389.480013: funcgraph_entry:                   |            dva_get_dsize_sync() {
+      z_wr_iss/6-13786 [000] 502389.480014: funcgraph_entry:        0.215 us   |              vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.480014: funcgraph_exit:         0.643 us   |            }
+      z_wr_iss/6-13786 [000] 502389.480014: funcgraph_exit:         2.845 us   |          }
+      z_wr_iss/6-13786 [000] 502389.480015: funcgraph_entry:                   |          dnode_diduse_space() {
+      z_wr_iss/6-13786 [000] 502389.480015: funcgraph_entry:        0.223 us   |            spa_version();
+      z_wr_iss/6-13786 [000] 502389.480015: funcgraph_exit:         0.820 us   |          }
+      z_wr_iss/6-13786 [000] 502389.480016: funcgraph_entry:        0.213 us   |          zrl_remove();
+      z_wr_iss/6-13786 [000] 502389.480016: funcgraph_exit:         8.802 us   |        }
+      z_wr_iss/6-13786 [000] 502389.480016: funcgraph_entry:        0.230 us   |        arc_cksum_compute();
+      z_wr_iss/6-13786 [000] 502389.480017: funcgraph_exit:         9.882 us   |      }
+      z_wr_iss/6-13786 [000] 502389.480017: funcgraph_entry:        0.287 us   |      zio_walk_parents();
+      z_wr_iss/6-13786 [000] 502389.480018: funcgraph_entry:        0.245 us   |      zio_walk_parents();
+      z_wr_iss/6-13786 [000] 502389.480018: funcgraph_exit:       + 12.455 us  |    }
+      z_wr_iss/6-13786 [000] 502389.480019: funcgraph_entry:        0.216 us   |    spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.480019: funcgraph_entry:        1.238 us   |    zio_taskq_member();
+      z_wr_iss/6-13786 [000] 502389.480020: funcgraph_entry:        0.275 us   |    spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.480021: funcgraph_entry:                   |    zio_vdev_io_start() {
+      z_wr_iss/6-13786 [000] 502389.480021: funcgraph_entry:        0.389 us   |      spa_config_enter();
+      z_wr_iss/6-13786 [000] 502389.480022: funcgraph_entry:                   |      vdev_mirror_io_start() {
+      z_wr_iss/6-13786 [000] 502389.480022: funcgraph_entry:                   |        vdev_mirror_map_alloc() {
+      z_wr_iss/6-13786 [000] 502389.480023: funcgraph_entry:        2.821 us   |          spa_get_random();
+      z_wr_iss/6-13786 [000] 502389.480026: funcgraph_entry:        0.215 us   |          vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.480026: funcgraph_entry:        0.217 us   |          vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.480027: funcgraph_entry:        0.212 us   |          vdev_lookup_top();
+      z_wr_iss/6-13786 [000] 502389.480027: funcgraph_exit:         4.872 us   |        }
+      z_wr_iss/6-13786 [000] 502389.480027: funcgraph_entry:                   |        zio_vdev_child_io() {
+      z_wr_iss/6-13786 [000] 502389.480028: funcgraph_entry:                   |          zio_create() {
+      z_wr_iss/6-13786 [000] 502389.480028: funcgraph_entry:        0.422 us   |            zio_add_child();
+      z_wr_iss/6-13786 [000] 502389.480029: funcgraph_exit:         1.384 us   |          }
+      z_wr_iss/6-13786 [000] 502389.480030: funcgraph_exit:         1.872 us   |        }
+      z_wr_iss/6-13786 [000] 502389.480030: funcgraph_entry:                   |        zio_nowait() {
+      z_wr_iss/6-13786 [000] 502389.480030: funcgraph_entry:        0.224 us   |          spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.480031: funcgraph_entry:        0.214 us   |          spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.480031: funcgraph_entry:                   |          zio_vdev_io_start() {
+      z_wr_iss/6-13786 [000] 502389.480031: funcgraph_entry:        0.304 us   |            zio_buf_alloc();
+      z_wr_iss/6-13786 [000] 502389.480032: funcgraph_entry:        0.334 us   |            zio_push_transform();
+      z_wr_iss/6-13786 [000] 502389.480033: funcgraph_entry:        0.216 us   |            spa_writeable();
+      z_wr_iss/6-13786 [000] 502389.480034: funcgraph_entry:                   |            vdev_tier_io_start() {
+      z_wr_iss/6-13786 [000] 502389.480034: funcgraph_entry:                   |              vdev_tier_map_alloc() {
+      z_wr_iss/6-13786 [000] 502389.480034: funcgraph_entry:        0.262 us   |                vdev_readable();
+      z_wr_iss/6-13786 [000] 502389.480035: funcgraph_entry:        0.262 us   |                vdev_readable();
+      z_wr_iss/6-13786 [000] 502389.480036: funcgraph_exit:         1.758 us   |              }
+      z_wr_iss/6-13786 [000] 502389.480038: funcgraph_entry:                   |              zio_vdev_child_io() {
+      z_wr_iss/6-13786 [000] 502389.480039: funcgraph_entry:                   |                zio_create() {
+      z_wr_iss/6-13786 [000] 502389.480039: funcgraph_entry:        0.387 us   |                  zio_add_child();
+      z_wr_iss/6-13786 [000] 502389.480040: funcgraph_exit:         1.197 us   |                }
+      z_wr_iss/6-13786 [000] 502389.480040: funcgraph_exit:         1.705 us   |              }
+      z_wr_iss/6-13786 [000] 502389.480040: funcgraph_entry:                   |              zio_nowait() {
+      z_wr_iss/6-13786 [000] 502389.480040: funcgraph_entry:        0.219 us   |                spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.480041: funcgraph_entry:        0.220 us   |                spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.480041: funcgraph_entry:                   |                zio_vdev_io_start() {
+      z_wr_iss/6-13786 [000] 502389.480042: funcgraph_entry:        0.236 us   |                  spa_writeable();
+      z_wr_iss/6-13786 [000] 502389.480042: funcgraph_entry:                   |                  vdev_queue_io() {
+      z_wr_iss/6-13786 [000] 502389.480043: funcgraph_entry:                   |                    vdev_queue_io_to_issue() {
+      z_wr_iss/6-13786 [000] 502389.480043: funcgraph_entry:        0.273 us   |                      zio_buf_alloc();
+      z_wr_iss/6-13786 [000] 502389.480044: funcgraph_entry:        0.230 us   |                      vdev_queue_offset_compare();
+      z_wr_iss/6-13786 [000] 502389.480044: funcgraph_entry:        0.278 us   |                      zio_buf_free();
+      z_wr_iss/6-13786 [000] 502389.480045: funcgraph_entry:        0.342 us   |                      vdev_queue_io_remove();
+      z_wr_iss/6-13786 [000] 502389.480046: funcgraph_exit:         2.702 us   |                    }
+      z_wr_iss/6-13786 [000] 502389.480046: funcgraph_exit:         3.723 us   |                  }
+      z_wr_iss/6-13786 [000] 502389.480046: funcgraph_entry:        0.219 us   |                  vdev_accessible();
+      z_wr_iss/6-13786 [000] 502389.480047: funcgraph_entry:                   |                  vdev_disk_io_start() {
+      z_wr_iss/6-13786 [000] 502389.480047: funcgraph_entry:                   |                    __vdev_disk_physio() {
+      z_wr_iss/6-13786 [000] 502389.480053: funcgraph_entry:        0.348 us   |                      vdev_disk_dio_put();
+      z_wr_iss/6-13786 [000] 502389.480053: funcgraph_exit:         6.324 us   |                    }
+      z_wr_iss/6-13786 [000] 502389.480053: funcgraph_exit:         6.861 us   |                  }
+      z_wr_iss/6-13786 [000] 502389.480054: funcgraph_exit:       + 12.228 us  |                }
+      z_wr_iss/6-13786 [000] 502389.480054: funcgraph_exit:       + 13.633 us  |              }
+      z_wr_iss/6-13786 [000] 502389.480055: funcgraph_exit:       + 21.362 us  |            }
+      z_wr_iss/6-13786 [000] 502389.480055: funcgraph_exit:       + 24.166 us  |          }
+      z_wr_iss/6-13786 [000] 502389.480055: funcgraph_entry:        0.247 us   |          spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.480056: funcgraph_entry:        0.219 us   |          spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.480056: funcgraph_entry:                   |          zio_vdev_io_done() {
+      z_wr_iss/6-13786 [000] 502389.480057: funcgraph_entry:        0.251 us   |            zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.480057: funcgraph_exit:         0.713 us   |          }
+      z_wr_iss/6-13786 [000] 502389.480057: funcgraph_exit:       + 27.522 us  |        }
+      z_wr_iss/6-13786 [000] 502389.480058: funcgraph_entry:                   |        zio_vdev_child_io() {
+      z_wr_iss/6-13786 [000] 502389.480058: funcgraph_entry:                   |          zio_create() {
+      z_wr_iss/6-13786 [000] 502389.480058: funcgraph_entry:        0.355 us   |            zio_add_child();
+      z_wr_iss/6-13786 [000] 502389.480059: funcgraph_exit:         1.068 us   |          }
+      z_wr_iss/6-13786 [000] 502389.480059: funcgraph_exit:         1.540 us   |        }
+      z_wr_iss/6-13786 [000] 502389.480059: funcgraph_entry:                   |        zio_nowait() {
+      z_wr_iss/6-13786 [000] 502389.480060: funcgraph_entry:        0.288 us   |          spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.480060: funcgraph_entry:        0.282 us   |          spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.480061: funcgraph_entry:                   |          zio_vdev_io_start() {
+      z_wr_iss/6-13786 [000] 502389.480062: funcgraph_entry:        0.555 us   |            zio_buf_alloc();
+      z_wr_iss/6-13786 [000] 502389.480063: funcgraph_entry:        0.673 us   |            zio_push_transform();
+      z_wr_iss/6-13786 [000] 502389.480065: funcgraph_entry:        0.528 us   |            spa_writeable();
+      z_wr_iss/6-13786 [000] 502389.480066: funcgraph_entry:                   |            vdev_tier_io_start() {
+      z_wr_iss/6-13786 [000] 502389.480066: funcgraph_entry:                   |              vdev_tier_map_alloc() {
+      z_wr_iss/6-13786 [000] 502389.480067: funcgraph_entry:        0.513 us   |                vdev_readable();
+      z_wr_iss/6-13786 [000] 502389.480068: funcgraph_entry:        0.419 us   |                vdev_readable();
+      z_wr_iss/6-13786 [000] 502389.480069: funcgraph_exit:         2.762 us   |              }
+      z_wr_iss/6-13786 [000] 502389.480072: funcgraph_entry:                   |              zio_vdev_child_io() {
+      z_wr_iss/6-13786 [000] 502389.480072: funcgraph_entry:                   |                zio_create() {
+      z_wr_iss/6-13786 [000] 502389.480073: funcgraph_entry:        0.720 us   |                  zio_add_child();
+      z_wr_iss/6-13786 [000] 502389.480075: funcgraph_exit:         2.068 us   |                }
+      z_wr_iss/6-13786 [000] 502389.480075: funcgraph_exit:         2.989 us   |              }
+      z_wr_iss/6-13786 [000] 502389.480076: funcgraph_entry:                   |              zio_nowait() {
+      z_wr_iss/6-13786 [000] 502389.480076: funcgraph_entry:        0.515 us   |                spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.480077: funcgraph_entry:        0.485 us   |                spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.480078: funcgraph_entry:                   |                zio_vdev_io_start() {
+      z_wr_iss/6-13786 [000] 502389.480078: funcgraph_entry:        0.497 us   |                  spa_writeable();
+      z_wr_iss/6-13786 [000] 502389.480079: funcgraph_entry:                   |                  vdev_queue_io() {
+      z_wr_iss/6-13786 [000] 502389.480080: funcgraph_entry:        0.427 us   |                    vdev_queue_offset_compare();
+      z_wr_iss/6-13786 [000] 502389.480081: funcgraph_entry:        0.643 us   |                    vdev_queue_offset_compare();
+      z_wr_iss/6-13786 [000] 502389.480082: funcgraph_entry:        0.603 us   |                    vdev_queue_io_to_issue();
+      z_wr_iss/6-13786 [000] 502389.480083: funcgraph_exit:         4.242 us   |                  }
+      z_wr_iss/6-13786 [000] 502389.480084: funcgraph_exit:         5.822 us   |                }
+      z_wr_iss/6-13786 [000] 502389.480084: funcgraph_exit:         8.567 us   |              }
+      z_wr_iss/6-13786 [000] 502389.480085: funcgraph_exit:       + 19.848 us  |            }
+      z_wr_iss/6-13786 [000] 502389.480086: funcgraph_exit:       + 24.666 us  |          }
+      z_wr_iss/6-13786 [000] 502389.480086: funcgraph_entry:        0.263 us   |          spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.480087: funcgraph_entry:        0.244 us   |          spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.480087: funcgraph_entry:                   |          zio_vdev_io_done() {
+      z_wr_iss/6-13786 [000] 502389.480087: funcgraph_entry:        0.278 us   |            zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.480088: funcgraph_exit:         0.772 us   |          }
+      z_wr_iss/6-13786 [000] 502389.480088: funcgraph_exit:       + 28.875 us  |        }
+      z_wr_iss/6-13786 [000] 502389.480089: funcgraph_entry:                   |        zio_vdev_child_io() {
+      z_wr_iss/6-13786 [000] 502389.480089: funcgraph_entry:                   |          zio_create() {
+      z_wr_iss/6-13786 [000] 502389.480089: funcgraph_entry:        0.428 us   |            zio_add_child();
+      z_wr_iss/6-13786 [000] 502389.480090: funcgraph_exit:         1.219 us   |          }
+      z_wr_iss/6-13786 [000] 502389.480090: funcgraph_exit:         1.682 us   |        }
+      z_wr_iss/6-13786 [000] 502389.480090: funcgraph_entry:                   |        zio_nowait() {
+      z_wr_iss/6-13786 [000] 502389.480091: funcgraph_entry:        0.216 us   |          spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.480091: funcgraph_entry:        0.221 us   |          spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.480092: funcgraph_entry:                   |          zio_vdev_io_start() {
+      z_wr_iss/6-13786 [000] 502389.480092: funcgraph_entry:        0.282 us   |            zio_buf_alloc();
+      z_wr_iss/6-13786 [000] 502389.480093: funcgraph_entry:        0.443 us   |            zio_push_transform();
+      z_wr_iss/6-13786 [000] 502389.480093: funcgraph_entry:        0.212 us   |            spa_writeable();
+      z_wr_iss/6-13786 [000] 502389.480094: funcgraph_entry:                   |            vdev_tier_io_start() {
+      z_wr_iss/6-13786 [000] 502389.480094: funcgraph_entry:                   |              vdev_tier_map_alloc() {
+      z_wr_iss/6-13786 [000] 502389.480094: funcgraph_entry:        0.219 us   |                vdev_readable();
+      z_wr_iss/6-13786 [000] 502389.480095: funcgraph_entry:        0.239 us   |                vdev_readable();
+      z_wr_iss/6-13786 [000] 502389.480096: funcgraph_exit:         1.448 us   |              }
+      z_wr_iss/6-13786 [000] 502389.480097: funcgraph_entry:                   |              zio_vdev_child_io() {
+      z_wr_iss/6-13786 [000] 502389.480097: funcgraph_entry:                   |                zio_create() {
+      z_wr_iss/6-13786 [000] 502389.480097: funcgraph_entry:        0.364 us   |                  zio_add_child();
+      z_wr_iss/6-13786 [000] 502389.480098: funcgraph_exit:         1.024 us   |                }
+      z_wr_iss/6-13786 [000] 502389.480098: funcgraph_exit:         1.488 us   |              }
+      z_wr_iss/6-13786 [000] 502389.480098: funcgraph_entry:                   |              zio_nowait() {
+      z_wr_iss/6-13786 [000] 502389.480099: funcgraph_entry:        0.215 us   |                spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.480099: funcgraph_entry:        0.212 us   |                spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.480100: funcgraph_entry:                   |                zio_vdev_io_start() {
+      z_wr_iss/6-13786 [000] 502389.480100: funcgraph_entry:        0.217 us   |                  spa_writeable();
+      z_wr_iss/6-13786 [000] 502389.480100: funcgraph_entry:                   |                  vdev_queue_io() {
+      z_wr_iss/6-13786 [000] 502389.480101: funcgraph_entry:        0.255 us   |                    vdev_queue_offset_compare();
+      z_wr_iss/6-13786 [000] 502389.480101: funcgraph_entry:        0.265 us   |                    vdev_queue_offset_compare();
+      z_wr_iss/6-13786 [000] 502389.480102: funcgraph_entry:        0.575 us   |                    vdev_queue_offset_compare();
+      z_wr_iss/6-13786 [000] 502389.480103: funcgraph_entry:        0.299 us   |                    vdev_queue_io_to_issue();
+      z_wr_iss/6-13786 [000] 502389.480103: funcgraph_exit:         3.157 us   |                  }
+      z_wr_iss/6-13786 [000] 502389.480104: funcgraph_exit:         4.081 us   |                }
+      z_wr_iss/6-13786 [000] 502389.480104: funcgraph_exit:         5.404 us   |              }
+      z_wr_iss/6-13786 [000] 502389.480105: funcgraph_exit:       + 10.642 us  |            }
+      z_wr_iss/6-13786 [000] 502389.480105: funcgraph_exit:       + 13.197 us  |          }
+      z_wr_iss/6-13786 [000] 502389.480105: funcgraph_entry:        0.219 us   |          spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.480105: funcgraph_entry:        0.224 us   |          spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.480106: funcgraph_entry:                   |          zio_vdev_io_done() {
+      z_wr_iss/6-13786 [000] 502389.480106: funcgraph_entry:        0.249 us   |            zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.480107: funcgraph_exit:         0.693 us   |          }
+      z_wr_iss/6-13786 [000] 502389.480107: funcgraph_exit:       + 16.420 us  |        }
+      z_wr_iss/6-13786 [000] 502389.480107: funcgraph_exit:       + 85.038 us  |      }
+      z_wr_iss/6-13786 [000] 502389.480110: funcgraph_entry:                   |      vdev_disk_physio_completion() {
+      z_wr_iss/6-13786 [000] 502389.480110: funcgraph_entry:                   |        vdev_disk_dio_put() {
+      z_wr_iss/6-13786 [000] 502389.480111: funcgraph_entry:        0.555 us   |          vdev_disk_dio_free();
+      z_wr_iss/6-13786 [000] 502389.480111: funcgraph_entry:                   |          zio_interrupt() {
+      z_wr_iss/6-13786 [000] 502389.480112: funcgraph_entry:                   |            zio_taskq_dispatch() {
+      z_wr_iss/6-13786 [000] 502389.480112: funcgraph_entry:        1.546 us   |              spa_taskq_dispatch_ent();
+      z_wr_iss/6-13786 [000] 502389.480114: funcgraph_exit:         2.114 us   |            }
+      z_wr_iss/6-13786 [000] 502389.480114: funcgraph_exit:         2.630 us   |          }
+      z_wr_iss/6-13786 [000] 502389.480114: funcgraph_exit:         3.926 us   |        }
+      z_wr_iss/6-13786 [000] 502389.480115: funcgraph_exit:         4.527 us   |      }
+      z_wr_iss/6-13786 [000] 502389.480118: funcgraph_exit:       + 86.288 us  |    }
+      z_wr_iss/6-13786 [000] 502389.480118: funcgraph_entry:        0.479 us   |    spa_get_dsl();
+      z_wr_iss/6-13786 [000] 502389.480119: funcgraph_entry:        0.454 us   |    spa_is_initializing();
+      z_wr_iss/6-13786 [000] 502389.480133: funcgraph_entry:                   |    zio_vdev_io_done() {
+      z_wr_iss/6-13786 [000] 502389.480134: funcgraph_entry:        0.929 us   |      zio_wait_for_children();
+      z_wr_iss/6-13786 [000] 502389.480135: funcgraph_exit:         2.622 us   |    }
+      z_wr_iss/6-13786 [000] 502389.480136: funcgraph_exit:       ! 148.798 us |  }
