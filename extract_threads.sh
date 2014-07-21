@@ -2,9 +2,6 @@ filename="scrub_tier.c"
 
 cat $filename |awk '{print $1}' | sort -u
 
-
-
-
 fname=${filename:0:-2}
 
 mkdir $fname
