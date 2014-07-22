@@ -1,1 +1,1 @@
-Scripts for testing Pools
+Scripts for generating traces for ZFS
