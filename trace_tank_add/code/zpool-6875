@@ -1,0 +1,3188 @@
+  zfsdev_open() {
+    zfsdev_minor_alloc();
+    zfs_onexit_init();
+    zfs_zevent_init();
+  }
+  zfsdev_open() {
+    zfsdev_minor_alloc();
+    zfs_onexit_init();
+    zfs_zevent_init();
+  }
+  zfsdev_ioctl() {
+    pool_status_check();
+    zfs_secpolicy_read();
+    zfs_ioc_pool_stats() {
+      spa_get_stats() {
+        spa_open_common() {
+          spa_lookup() {
+            spa_name_compare();
+          }
+          spa_open_ref();
+          spa_config_generate() {
+            spa_config_enter();
+            spa_name();
+            spa_version();
+            spa_state();
+            spa_guid() {
+              dsl_pool_sync_context() {
+                spa_is_initializing();
+              }
+            }
+            vdev_top_config_generate();
+            vdev_config_generate() {
+              vdev_get_stats() {
+                vdev_get_min_asize();
+              }
+              spa_scan_get_stats();
+              vdev_config_generate() {
+                vdev_get_stats() {
+                  vdev_get_min_asize();
+                }
+                spa_scan_get_stats();
+              }
+            }
+            spa_load_state();
+            ddt_get_dedup_histogram();
+            ddt_get_dedup_object_stats();
+            ddt_get_dedup_stats() {
+              ddt_get_dedup_histogram();
+              ddt_histogram_stat();
+            }
+            spa_config_exit();
+          }
+        }
+        spa_config_enter();
+        spa_get_errlog_size();
+        spa_suspended();
+        spa_add_spares();
+        spa_add_l2cache();
+        spa_add_feature_stats() {
+          zap_cursor_init();
+          zap_cursor_retrieve() {
+            zap_lockdir() {
+              dmu_buf_hold() {
+                dnode_hold() {
+                  dnode_hold_impl() {
+                    dbuf_whichblock();
+                    dbuf_hold() {
+                      dbuf_hold_impl() {
+                        __dbuf_hold_impl() {
+                          dbuf_find() {
+                            dbuf_hash();
+                          }
+                        }
+                      }
+                    }
+                    RW_WRITE_HELD();
+                    dbuf_read() {
+                      zrl_add();
+                      dmu_zfetch();
+                      RW_WRITE_HELD();
+                      zrl_remove();
+                    }
+                    dmu_buf_get_user();
+                    zrl_add();
+                    zrl_remove();
+                    dmu_buf_rele() {
+                      dbuf_rele_and_unlock();
+                    }
+                  }
+                }
+                dbuf_whichblock();
+                dbuf_hold() {
+                  dbuf_hold_impl() {
+                    __dbuf_hold_impl() {
+                      dbuf_find() {
+                        dbuf_hash();
+                      }
+                      arc_buf_add_ref() {
+                        add_reference();
+                        arc_access();
+                      }
+                    }
+                  }
+                }
+                dbuf_read() {
+                  zrl_add();
+                  RW_WRITE_HELD();
+                  zrl_remove();
+                }
+                dnode_rele();
+              }
+              dmu_buf_get_user();
+            }
+            mze_compare();
+            mzap_normalization_conflict();
+          }
+          zap_cursor_advance();
+          zap_cursor_retrieve() {
+            mze_compare();
+          }
+          zap_cursor_fini() {
+            zap_unlockdir() {
+              dmu_buf_rele() {
+                dbuf_rele_and_unlock() {
+                  arc_buf_freeze();
+                  arc_released();
+                  arc_buf_remove_ref() {
+                    remove_reference();
+                  }
+                  arc_buf_eviction_needed();
+                }
+              }
+            }
+          }
+          zap_cursor_init();
+          zap_cursor_retrieve() {
+            zap_lockdir() {
+              dmu_buf_hold() {
+                dnode_hold() {
+                  dnode_hold_impl() {
+                    dbuf_whichblock();
+                    dbuf_hold() {
+                      dbuf_hold_impl() {
+                        __dbuf_hold_impl() {
+                          dbuf_find() {
+                            dbuf_hash();
+                          }
+                        }
+                      }
+                    }
+                    RW_WRITE_HELD();
+                    dbuf_read() {
+                      zrl_add();
+                      dmu_zfetch();
+                      RW_WRITE_HELD();
+                      zrl_remove();
+                    }
+                    dmu_buf_get_user();
+                    zrl_add();
+                    zrl_remove();
+                    dmu_buf_rele() {
+                      dbuf_rele_and_unlock();
+                    }
+                  }
+                }
+                dbuf_whichblock();
+                dbuf_hold() {
+                  dbuf_hold_impl() {
+                    __dbuf_hold_impl() {
+                      dbuf_find() {
+                        dbuf_hash();
+                      }
+                      arc_buf_add_ref() {
+                        add_reference();
+                        arc_access();
+                      }
+                    }
+                  }
+                }
+                dbuf_read() {
+                  zrl_add();
+                  RW_WRITE_HELD();
+                  zrl_remove();
+                }
+                dnode_rele();
+              }
+              dmu_buf_get_user();
+            }
+            mze_compare();
+            mzap_normalization_conflict();
+          }
+          zap_cursor_advance();
+          zap_cursor_retrieve() {
+            mze_compare();
+            mze_compare();
+            mzap_normalization_conflict();
+          }
+          zap_cursor_advance();
+          zap_cursor_retrieve() {
+            mze_compare();
+            mze_compare();
+          }
+          zap_cursor_fini() {
+            zap_unlockdir() {
+              dmu_buf_rele() {
+                dbuf_rele_and_unlock() {
+                  arc_buf_freeze();
+                  arc_released();
+                  arc_buf_remove_ref() {
+                    remove_reference();
+                  }
+                  arc_buf_eviction_needed();
+                }
+              }
+            }
+          }
+        }
+        spa_altroot();
+        spa_config_exit();
+        spa_close();
+      }
+      put_nvlist();
+    }
+  }
+  zfsdev_ioctl() {
+    pool_status_check();
+    zfs_secpolicy_read();
+    zfs_ioc_pool_get_props() {
+      spa_open() {
+        spa_open_common() {
+          spa_lookup() {
+            spa_name_compare();
+          }
+          spa_open_ref();
+        }
+      }
+      spa_prop_get() {
+        spa_normal_class();
+        metaslab_class_get_alloc();
+        spa_normal_class();
+        metaslab_class_get_space();
+        spa_name();
+        spa_prop_add_list();
+        spa_prop_add_list();
+        spa_prop_add_list();
+        spa_prop_add_list();
+        spa_prop_add_list();
+        spa_mode();
+        spa_prop_add_list();
+        spa_prop_add_list();
+        ddt_get_pool_dedup_ratio() {
+          ddt_get_dedup_stats() {
+            ddt_get_dedup_histogram();
+            ddt_histogram_stat();
+          }
+        }
+        spa_prop_add_list();
+        spa_prop_add_list();
+        spa_version();
+        spa_prop_add_list();
+        spa_prop_add_list();
+        spa_guid() {
+          dsl_pool_sync_context() {
+            spa_is_initializing();
+          }
+        }
+        spa_prop_add_list();
+      }
+      spa_close();
+      put_nvlist();
+    }
+  }
+  zfsdev_ioctl() {
+    pool_status_check() {
+      spa_open() {
+        spa_open_common() {
+          spa_lookup() {
+            spa_name_compare();
+          }
+          spa_open_ref();
+        }
+      }
+      spa_suspended();
+      spa_writeable();
+      spa_close();
+    }
+    zfs_secpolicy_config();
+    zfs_ioc_vdev_add() {
+      spa_open() {
+        spa_open_common() {
+          spa_lookup() {
+            spa_name_compare();
+          }
+          spa_open_ref();
+        }
+      }
+      get_nvlist();
+      spa_vdev_add() {
+        spa_vdev_enter() {
+          spa_vdev_config_enter() {
+            spa_config_enter();
+          }
+        }
+        spa_config_parse() {
+          vdev_alloc() {
+            vdev_alloc_common() {
+              spa_generate_guid() {
+                spa_get_random();
+                spa_guid() {
+                  dsl_pool_sync_context() {
+                    spa_is_initializing();
+                  }
+                }
+                spa_guid_exists() {
+                  spa_by_guid() {
+                    spa_guid() {
+                      dsl_pool_sync_context() {
+                        spa_is_initializing();
+                      }
+                    }
+                    vdev_lookup_top() {
+                      vdev_lookup_top();
+                    }
+                  }
+                }
+              }
+              space_map_create();
+              space_map_create();
+              space_map_create();
+              space_map_create();
+              txg_list_create();
+              txg_list_create();
+              vdev_queue_init() {
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+                zio_vdev_alloc();
+              }
+              vdev_cache_init();
+            }
+            vdev_add_child();
+          }
+          spa_config_parse() {
+            vdev_alloc() {
+              vdev_alloc_common() {
+                spa_generate_guid() {
+                  spa_get_random();
+                  spa_guid() {
+                    dsl_pool_sync_context() {
+                      spa_is_initializing();
+                    }
+                  }
+                  spa_guid_exists() {
+                    spa_by_guid() {
+                      spa_guid() {
+                        dsl_pool_sync_context() {
+                          spa_is_initializing();
+                        }
+                      }
+                      vdev_lookup_top() {
+                        vdev_lookup_top();
+                      }
+                    }
+                  }
+                }
+                space_map_create();
+                space_map_create();
+                space_map_create();
+                space_map_create();
+                txg_list_create();
+                txg_list_create();
+                vdev_queue_init() {
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                  zio_vdev_alloc();
+                }
+                vdev_cache_init();
+              }
+              spa_strdup();
+              spa_normal_class();
+              metaslab_group_create();
+              vdev_add_child();
+            }
+          }
+        }
+        vdev_create() {
+          vdev_open() {
+            vdev_get_min_asize();
+            vdev_root_open() {
+              vdev_open_children() {
+                vdev_uses_zvols() {
+                  zvol_is_zvol();
+                  vdev_uses_zvols() {
+                    zvol_is_zvol();
+                  }
+                }
+              }
+            }
+            vdev_set_state();
+            vdev_set_min_asize() {
+              vdev_get_min_asize();
+              vdev_set_min_asize() {
+                vdev_get_min_asize();
+              }
+            }
+          }
+          vdev_label_init() {
+            vdev_label_init() {
+              spa_writeable();
+              vdev_is_dead();
+              vdev_label_read_config() {
+                vdev_readable();
+                zio_buf_alloc();
+                zio_root() {
+                  zio_null() {
+                    zio_create();
+                  }
+                }
+                zio_read_phys() {
+                  zio_create() {
+                    zio_add_child();
+                  }
+                }
+                zio_nowait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_ready() {
+                    zio_wait_for_children();
+                    zio_wait_for_children();
+                    zio_walk_parents();
+                    zio_walk_parents();
+                  }
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_vdev_io_start() {
+                    vdev_cache_read();
+                    vdev_queue_io() {
+                      vdev_queue_io_to_issue() {
+                        zio_buf_alloc();
+                        vdev_queue_timestamp_compare();
+                        zio_buf_free();
+                        vdev_queue_io_remove();
+                      }
+                    }
+                    vdev_accessible();
+                    vdev_disk_io_start() {
+                      __vdev_disk_physio() {
+                        vdev_disk_dio_put();
+                      }
+                    }
+                  }
+                }
+                zio_wait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_ready() {
+                    zio_wait_for_children();
+                    zio_wait_for_children();
+                    zio_walk_parents();
+                  }
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_done() {
+                    zio_wait_for_children();
+                  }
+                }
+                zio_root() {
+                  zio_null() {
+                    zio_create();
+                  }
+                }
+                zio_read_phys() {
+                  zio_create() {
+                    zio_add_child();
+                  }
+                }
+                zio_nowait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_ready() {
+                    zio_wait_for_children();
+                    zio_wait_for_children();
+                    zio_walk_parents();
+                    zio_walk_parents();
+                  }
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_vdev_io_start() {
+                    vdev_cache_read();
+                    vdev_queue_io() {
+                      vdev_queue_io_to_issue() {
+                        zio_buf_alloc();
+                        vdev_queue_timestamp_compare();
+                        zio_buf_free();
+                        vdev_queue_io_remove();
+                      }
+                    }
+                    vdev_accessible();
+                    vdev_disk_io_start() {
+                      __vdev_disk_physio() {
+                        vdev_disk_dio_put();
+                      }
+                    }
+                  }
+                }
+                zio_wait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_ready() {
+                    zio_wait_for_children();
+                    zio_wait_for_children();
+                    zio_walk_parents();
+                  }
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_done() {
+                    zio_wait_for_children();
+                  }
+                }
+                zio_root() {
+                  zio_null() {
+                    zio_create();
+                  }
+                }
+                zio_read_phys() {
+                  zio_create() {
+                    zio_add_child();
+                  }
+                }
+                zio_nowait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_ready() {
+                    zio_wait_for_children();
+                    zio_wait_for_children();
+                    zio_walk_parents();
+                    zio_walk_parents();
+                  }
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_vdev_io_start() {
+                    vdev_cache_read();
+                    vdev_queue_io() {
+                      vdev_queue_io_to_issue() {
+                        zio_buf_alloc();
+                        vdev_queue_timestamp_compare();
+                        zio_buf_free();
+                        vdev_queue_io_remove();
+                      }
+                    }
+                    vdev_accessible();
+                    vdev_disk_io_start() {
+                      __vdev_disk_physio() {
+                        vdev_disk_dio_put();
+                      }
+                    }
+                  }
+                }
+                zio_wait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_ready() {
+                    zio_wait_for_children();
+                    zio_wait_for_children();
+                    zio_walk_parents();
+                  }
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_done() {
+                    zio_wait_for_children();
+                  }
+                }
+                zio_root() {
+                  zio_null() {
+                    zio_create();
+                  }
+                }
+                zio_read_phys() {
+                  zio_create() {
+                    zio_add_child();
+                  }
+                }
+                zio_nowait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_ready() {
+                    zio_wait_for_children();
+                    zio_wait_for_children();
+                    zio_walk_parents();
+                    zio_walk_parents();
+                  }
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_vdev_io_start() {
+                    vdev_cache_read();
+                    vdev_queue_io() {
+                      vdev_queue_io_to_issue() {
+                        zio_buf_alloc();
+                        vdev_queue_timestamp_compare();
+                        zio_buf_free();
+                        vdev_queue_io_remove();
+                      }
+                    }
+                    vdev_accessible();
+                    vdev_disk_io_start() {
+                      __vdev_disk_physio() {
+                        vdev_disk_dio_put();
+                      }
+                    }
+                  }
+                }
+                zio_wait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_ready() {
+                    zio_wait_for_children();
+                    zio_wait_for_children();
+                    zio_walk_parents();
+                  }
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_done() {
+                    zio_wait_for_children();
+                  }
+                }
+                zio_buf_free();
+              }
+              spa_guid_exists() {
+                spa_by_guid() {
+                  spa_guid() {
+                    dsl_pool_sync_context() {
+                      spa_is_initializing();
+                    }
+                  }
+                }
+              }
+              spa_spare_exists() {
+                spa_aux_exists();
+              }
+              spa_l2cache_exists() {
+                spa_aux_exists();
+              }
+              zio_buf_alloc();
+              spa_config_generate() {
+                spa_name();
+                spa_version();
+                spa_state();
+                spa_guid() {
+                  dsl_pool_sync_context() {
+                    spa_is_initializing();
+                  }
+                }
+                vdev_top_config_generate();
+                vdev_config_generate();
+              }
+              zio_buf_alloc();
+              zio_buf_alloc();
+              zio_root() {
+                zio_null() {
+                  zio_create();
+                }
+              }
+              vdev_label_write() {
+                zio_write_phys() {
+                  zio_create() {
+                    zio_add_child();
+                  }
+                  zio_buf_alloc();
+                  zio_push_transform();
+                }
+                zio_nowait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_issue_async() {
+                    zio_taskq_dispatch() {
+                      spa_taskq_dispatch_ent();
+                    }
+                  }
+                }
+              }
+              vdev_label_write() {
+                zio_write_phys() {
+                  zio_create() {
+                    zio_add_child();
+                  }
+                  zio_buf_alloc();
+                  zio_push_transform();
+                }
+                zio_nowait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_issue_async() {
+                    zio_taskq_dispatch() {
+                      spa_taskq_dispatch_ent();
+                    }
+                  }
+                }
+              }
+              vdev_label_write() {
+                zio_write_phys() {
+                  zio_create() {
+                    zio_add_child();
+                  }
+                  zio_buf_alloc();
+                  zio_push_transform();
+                }
+                zio_nowait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_issue_async() {
+                    zio_taskq_dispatch() {
+                      spa_taskq_dispatch_ent();
+                    }
+                  }
+                }
+              }
+              vdev_label_write() {
+                zio_write_phys() {
+                  zio_create() {
+                    zio_add_child();
+                  }
+                  zio_buf_alloc();
+                  zio_push_transform();
+                }
+                zio_nowait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_issue_async() {
+                    zio_taskq_dispatch() {
+                      spa_taskq_dispatch_ent();
+                    }
+                  }
+                }
+              }
+              vdev_label_write() {
+                zio_write_phys() {
+                  zio_create() {
+                    zio_add_child();
+                  }
+                  zio_buf_alloc();
+                  zio_push_transform();
+                }
+                zio_nowait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_issue_async() {
+                    zio_taskq_dispatch() {
+                      spa_taskq_dispatch_ent();
+                    }
+                  }
+                }
+              }
+              vdev_label_write() {
+                zio_write_phys() {
+                  zio_create() {
+                    zio_add_child();
+                  }
+                  zio_buf_alloc();
+                  zio_push_transform();
+                }
+                zio_nowait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_issue_async() {
+                    zio_taskq_dispatch() {
+                      spa_taskq_dispatch_ent();
+                    }
+                  }
+                }
+              }
+              vdev_label_write() {
+                zio_write_phys() {
+                  zio_create() {
+                    zio_add_child();
+                  }
+                  zio_buf_alloc();
+                  zio_push_transform();
+                }
+                zio_nowait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_issue_async() {
+                    zio_taskq_dispatch() {
+                      spa_taskq_dispatch_ent();
+                    }
+                  }
+                }
+              }
+              vdev_label_write() {
+                zio_write_phys() {
+                  zio_create() {
+                    zio_add_child();
+                  }
+                  zio_buf_alloc();
+                  zio_push_transform();
+                }
+                zio_nowait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_issue_async() {
+                    zio_taskq_dispatch() {
+                      spa_taskq_dispatch_ent();
+                    }
+                  }
+                }
+              }
+              vdev_label_write() {
+                zio_write_phys() {
+                  zio_create() {
+                    zio_add_child();
+                  }
+                  zio_buf_alloc();
+                  zio_push_transform();
+                }
+                zio_nowait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_issue_async() {
+                    zio_taskq_dispatch() {
+                      spa_taskq_dispatch_ent();
+                    }
+                  }
+                }
+              }
+              vdev_label_write() {
+                zio_write_phys() {
+                  zio_create() {
+                    zio_add_child();
+                  }
+                  zio_buf_alloc();
+                  zio_push_transform();
+                }
+                zio_nowait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_issue_async() {
+                    zio_taskq_dispatch() {
+                      spa_taskq_dispatch_ent();
+                    }
+                  }
+                }
+              }
+              vdev_label_write() {
+                zio_write_phys() {
+                  zio_create() {
+                    zio_add_child();
+                  }
+                  zio_buf_alloc();
+                  zio_push_transform();
+                }
+                zio_nowait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_issue_async() {
+                    zio_taskq_dispatch() {
+                      spa_taskq_dispatch_ent();
+                    }
+                  }
+                }
+              }
+              vdev_label_write() {
+                zio_write_phys() {
+                  zio_create() {
+                    zio_add_child();
+                  }
+                  zio_buf_alloc();
+                  zio_push_transform();
+                }
+                zio_nowait() {
+                  spa_get_dsl();
+                  spa_is_initializing();
+                  zio_issue_async() {
+                    zio_taskq_dispatch() {
+                      spa_taskq_dispatch_ent();
+                    }
+                  }
+                }
+              }
+              zio_wait() {
+                spa_get_dsl();
+                spa_is_initializing();
+                zio_ready() {
+                  zio_wait_for_children();
+                  zio_wait_for_children();
+                  zio_walk_parents();
+                }
+                spa_get_dsl();
+                spa_is_initializing();
+                zio_done() {
+                  zio_wait_for_children();
+                }
+              }
+              zio_buf_free();
+              zio_buf_free();
+              zio_buf_free();
+              spa_spare_exists() {
+                spa_aux_exists();
+              }
+              spa_l2cache_exists() {
+                spa_aux_exists();
+              }
+            }
+          }
+        }
+        spa_validate_aux() {
+          spa_validate_aux_devs();
+          spa_validate_aux_devs();
+        }
+        vdev_remove_child();
+        vdev_add_child();
+        vdev_config_dirty();
+        spa_vdev_exit() {
+          spa_vdev_config_exit() {
+            vdev_dtl_reassess() {
+              vdev_dtl_reassess() {
+                space_map_vacate();
+                space_map_walk();
+                space_map_vacate();
+                space_map_walk();
+              }
+              vdev_dtl_reassess() {
+                space_map_vacate();
+                space_map_walk();
+                space_map_vacate();
+                space_map_walk();
+              }
+            }
+            spa_config_exit();
+            txg_wait_synced() {
+            }
+            spa_config_enter();
+            vdev_free() {
+              vdev_close() {
+                vdev_root_close();
+                vdev_cache_purge();
+              }
+              vdev_remove_child();
+              vdev_queue_fini() {
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+                zio_vdev_free();
+              }
+              vdev_cache_fini() {
+                vdev_cache_purge();
+              }
+              txg_list_destroy();
+              txg_list_destroy();
+              space_map_unload() {
+                space_map_vacate();
+              }
+              space_map_destroy();
+              space_map_unload() {
+                space_map_vacate();
+              }
+              space_map_destroy();
+              space_map_unload() {
+                space_map_vacate();
+              }
+              space_map_destroy();
+              space_map_unload() {
+                space_map_vacate();
+              }
+              space_map_destroy();
+            }
+            spa_config_exit();
+            spa_config_sync() {
+              spa_next();
+              spa_writeable();
+              spa_name();
+              spa_next();
+              spa_event_notify() {
+                zfs_ereport_post() {
+                  zfs_ereport_start() {
+                    spa_load_state();
+                    spa_load_state();
+                    spa_load_state();
+                    fm_nvlist_create() {
+                      i_fm_alloc();
+                      i_fm_alloc();
+                    }
+                    fm_nvlist_create() {
+                      i_fm_alloc();
+                      i_fm_alloc();
+                    }
+                    spa_load_state();
+                    fm_ena_generate() {
+                      fm_ena_generate_cpu();
+                    }
+                    spa_guid() {
+                      dsl_pool_sync_context() {
+                        spa_is_initializing();
+                      }
+                    }
+                    fm_fmri_zfs_set() {
+                      i_fm_alloc();
+                      i_fm_alloc();
+                      i_fm_alloc();
+                    }
+                    fm_ereport_set() {
+                      i_fm_alloc();
+                      i_fm_alloc();
+                      i_fm_alloc();
+                      i_fm_alloc();
+                      i_fm_alloc();
+                      i_fm_alloc();
+                      i_fm_alloc();
+                      i_fm_payload_set();
+                    }
+                    spa_load_state();
+                    spa_guid() {
+                      dsl_pool_sync_context() {
+                        spa_is_initializing();
+                      }
+                    }
+                    spa_name();
+                    fm_payload_set() {
+                      i_fm_payload_set() {
+                        i_fm_alloc();
+                        i_fm_alloc();
+                        i_fm_alloc();
+                      }
+                    }
+                    spa_get_failmode();
+                    fm_payload_set() {
+                      i_fm_payload_set() {
+                        i_fm_alloc();
+                      }
+                    }
+                  }
+                  zfs_zevent_post() {
+                    i_fm_alloc();
+                    i_fm_alloc();
+                  }
+                }
+              }
+            }
+          }
+        }
+        spa_config_update() {
+          spa_config_enter();
+          spa_last_synced_txg();
+          vdev_config_dirty() {
+            vdev_config_dirty();
+            vdev_config_dirty();
+          }
+          spa_config_exit();
+          txg_wait_synced() {
+          }
+          spa_config_sync() {
+            spa_next();
+            spa_writeable();
+            spa_name();
+            spa_next();
+          }
+          spa_config_update() {
+            spa_config_enter();
+            spa_last_synced_txg();
+            vdev_expand();
+            vdev_metaslab_set_size();
+            vdev_expand() {
+              vdev_metaslab_init() {
+                vdev_default_asize();
+                metaslab_init() {
+                  space_map_create();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_init() {
+                  space_map_create();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  metaslab_compare();
+                  vdev_dirty() {
+                    txg_list_add();
+                  }
+                  vdev_dirty() {
+                    txg_list_add();
+                    txg_list_add();
+                  }
+                }
+                metaslab_group_activate() {
+                  metaslab_group_alloc_update();
+                }
+              }
+              vdev_config_dirty();
+            }
+            spa_config_exit();
+            txg_wait_synced() {
+            }
+            spa_config_sync() {
+              spa_next();
+              spa_writeable();
+              spa_name();
+              spa_next();
+              spa_event_notify() {
+                zfs_ereport_post() {
+                  zfs_ereport_start() {
+                    spa_load_state();
+                    spa_load_state();
+                    spa_load_state();
+                    fm_nvlist_create() {
+                      i_fm_alloc();
+                      i_fm_alloc();
+                    }
+                    fm_nvlist_create() {
+                      i_fm_alloc();
+                      i_fm_alloc();
+                    }
+                    spa_load_state();
+                    fm_ena_generate() {
+                      fm_ena_generate_cpu();
+                    }
+                    spa_guid() {
+                      dsl_pool_sync_context() {
+                        spa_is_initializing();
+                      }
+                    }
+                    fm_fmri_zfs_set() {
+                      i_fm_alloc();
+                      i_fm_alloc();
+                      i_fm_alloc();
+                    }
+                    fm_ereport_set() {
+                      i_fm_alloc();
+                      i_fm_alloc();
+                      i_fm_alloc();
+                      i_fm_alloc();
+                      i_fm_alloc();
+                      i_fm_alloc();
+                      i_fm_alloc();
+                      i_fm_payload_set();
+                    }
+                    spa_load_state();
+                    spa_guid() {
+                      dsl_pool_sync_context() {
+                        spa_is_initializing();
+                      }
+                    }
+                    spa_name();
+                    fm_payload_set() {
+                      i_fm_payload_set() {
+                        i_fm_alloc();
+                        i_fm_alloc();
+                        i_fm_alloc();
+                      }
+                    }
+                    spa_get_failmode();
+                    fm_payload_set() {
+                      i_fm_payload_set() {
+                        i_fm_alloc();
+                      }
+                    }
+                  }
+                  zfs_zevent_post() {
+                    i_fm_alloc();
+                    i_fm_alloc();
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      spa_close();
+    }
+  }
+  zfsdev_ioctl() {
+    get_nvlist();
+    zfs_secpolicy_log_history();
+    zfs_ioc_log_history() {
+      spa_open() {
+        spa_open_common() {
+          spa_lookup() {
+            spa_name_compare();
+          }
+          spa_open_ref();
+        }
+      }
+      spa_version();
+      spa_history_log() {
+        spa_history_log_nvl() {
+          spa_version();
+          spa_writeable();
+          spa_get_dsl();
+          dmu_tx_create_dd();
+          dmu_tx_assign() {
+            spa_suspended();
+            dsl_pool_need_dirty_delay();
+            txg_hold_open();
+            spa_get_asize();
+            spa_get_asize();
+            spa_get_asize();
+            txg_rele_to_quiesce();
+          }
+          spa_get_dsl();
+          dsl_sync_task_nowait() {
+            dmu_tx_get_txg();
+            txg_list_add_tail();
+          }
+          dmu_tx_commit() {
+            txg_rele_to_sync();
+          }
+        }
+      }
+      spa_close();
+    }
+  }
+  zfsdev_release() {
+    zfs_onexit_destroy();
+    zfs_zevent_destroy();
+  }
+  zfsdev_release() {
+    zfs_onexit_destroy();
+    zfs_zevent_destroy();
+  }

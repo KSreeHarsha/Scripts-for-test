@@ -1,0 +1,254 @@
+  zio_execute() {
+    spa_get_dsl();
+    spa_is_initializing();
+    zio_vdev_io_done() {
+      zio_wait_for_children();
+      vdev_queue_io_done() {
+        vdev_queue_io_to_issue();
+      }
+      vdev_disk_io_done();
+    }
+    spa_get_dsl();
+    spa_is_initializing();
+    zio_vdev_io_assess() {
+      zio_wait_for_children();
+    }
+    spa_get_dsl();
+    spa_is_initializing();
+    zio_checksum_verify() {
+      zio_checksum_error();
+    }
+    spa_get_dsl();
+    spa_is_initializing();
+    zio_done() {
+      zio_wait_for_children();
+      zio_wait_for_children();
+      zio_wait_for_children();
+      zio_wait_for_children();
+      zio_pop_transforms();
+      vdev_stat_update();
+      zio_gang_tree_free();
+      vdev_tier_child_done();
+      zio_walk_parents();
+      zio_walk_parents();
+      zio_remove_child();
+      spa_get_dsl();
+      spa_is_initializing();
+      zio_vdev_io_done() {
+        zio_wait_for_children();
+        vdev_tier_io_done() {
+          spa_writeable();
+        }
+      }
+      spa_get_dsl();
+      spa_is_initializing();
+      zio_vdev_io_assess() {
+        zio_wait_for_children();
+        vdev_tier_map_free();
+      }
+      spa_get_dsl();
+      spa_is_initializing();
+      zio_done() {
+        zio_wait_for_children();
+        zio_wait_for_children();
+        zio_wait_for_children();
+        zio_wait_for_children();
+        zio_pop_transforms() {
+          zio_subblock();
+          zio_buf_free();
+        }
+        vdev_stat_update();
+        zio_gang_tree_free();
+        vdev_mirror_child_done();
+        zio_walk_parents();
+        zio_walk_parents();
+        zio_remove_child();
+        spa_get_dsl();
+        spa_is_initializing();
+        zio_vdev_io_done() {
+          zio_wait_for_children();
+          vdev_mirror_io_done() {
+            spa_writeable();
+          }
+        }
+        spa_get_dsl();
+        spa_is_initializing();
+        zio_vdev_io_assess() {
+          zio_wait_for_children();
+          spa_config_exit();
+          vdev_mirror_map_free();
+        }
+        spa_get_dsl();
+        spa_is_initializing();
+        zio_done() {
+          zio_wait_for_children();
+          zio_wait_for_children();
+          zio_wait_for_children();
+          zio_wait_for_children();
+          zio_pop_transforms() {
+            zio_decompress() {
+              zio_decompress_data() {
+                lzjb_decompress();
+              }
+            }
+            zio_buf_free();
+          }
+          vdev_stat_update();
+          zio_gang_tree_free();
+          arc_read_done() {
+            buf_hash_find();
+            arc_cksum_compute();
+            dbuf_read_done() {
+              dbuf_set_data() {
+                arc_released();
+                arc_set_callback();
+              }
+              dbuf_rele_and_unlock();
+            }
+          }
+          zio_walk_parents();
+          zio_walk_parents();
+          zio_remove_child();
+          spa_get_dsl();
+          spa_is_initializing();
+          zio_done() {
+            zio_wait_for_children();
+            zio_wait_for_children();
+            zio_wait_for_children();
+            zio_wait_for_children();
+            zio_pop_transforms();
+            vdev_stat_update();
+            zio_gang_tree_free();
+            zio_walk_parents();
+          }
+        }
+      }
+    }
+  }
+  zio_execute() {
+    spa_get_dsl();
+    spa_is_initializing();
+    zio_vdev_io_done() {
+      zio_wait_for_children();
+      vdev_queue_io_done() {
+        vdev_queue_io_to_issue();
+      }
+      vdev_disk_io_done();
+    }
+    spa_get_dsl();
+    spa_is_initializing();
+    zio_vdev_io_assess() {
+      zio_wait_for_children();
+    }
+    spa_get_dsl();
+    spa_is_initializing();
+    zio_checksum_verify() {
+      zio_checksum_error();
+    }
+    spa_get_dsl();
+    spa_is_initializing();
+    zio_done() {
+      zio_wait_for_children();
+      zio_wait_for_children();
+      zio_wait_for_children();
+      zio_wait_for_children();
+      zio_pop_transforms();
+      vdev_stat_update();
+      zio_gang_tree_free();
+      vdev_tier_child_done();
+      zio_walk_parents();
+      zio_walk_parents();
+      zio_remove_child();
+      spa_get_dsl();
+      spa_is_initializing();
+      zio_vdev_io_done() {
+        zio_wait_for_children();
+        vdev_tier_io_done() {
+          spa_writeable();
+        }
+      }
+      spa_get_dsl();
+      spa_is_initializing();
+      zio_vdev_io_assess() {
+        zio_wait_for_children();
+        vdev_tier_map_free();
+      }
+      spa_get_dsl();
+      spa_is_initializing();
+      zio_done() {
+        zio_wait_for_children();
+        zio_wait_for_children();
+        zio_wait_for_children();
+        zio_wait_for_children();
+        zio_pop_transforms() {
+          zio_subblock();
+          zio_buf_free();
+        }
+        vdev_stat_update();
+        zio_gang_tree_free();
+        vdev_mirror_child_done();
+        zio_walk_parents();
+        zio_walk_parents();
+        zio_remove_child();
+        spa_get_dsl();
+        spa_is_initializing();
+        zio_vdev_io_done() {
+          zio_wait_for_children();
+          vdev_mirror_io_done() {
+            spa_writeable();
+          }
+        }
+        spa_get_dsl();
+        spa_is_initializing();
+        zio_vdev_io_assess() {
+          zio_wait_for_children();
+          spa_config_exit();
+          vdev_mirror_map_free();
+        }
+        spa_get_dsl();
+        spa_is_initializing();
+        zio_done() {
+          zio_wait_for_children();
+          zio_wait_for_children();
+          zio_wait_for_children();
+          zio_wait_for_children();
+          zio_pop_transforms() {
+            zio_decompress() {
+              zio_decompress_data() {
+                lzjb_decompress();
+              }
+            }
+            zio_buf_free();
+          }
+          vdev_stat_update();
+          zio_gang_tree_free();
+          arc_read_done() {
+            buf_hash_find();
+            arc_cksum_compute();
+            dbuf_read_done() {
+              dbuf_set_data() {
+                arc_released();
+                arc_set_callback();
+              }
+              dbuf_rele_and_unlock();
+            }
+          }
+          zio_walk_parents();
+          zio_walk_parents();
+          zio_remove_child();
+          spa_get_dsl();
+          spa_is_initializing();
+          zio_done() {
+            zio_wait_for_children();
+            zio_wait_for_children();
+            zio_wait_for_children();
+            zio_wait_for_children();
+            zio_pop_transforms();
+            vdev_stat_update();
+            zio_gang_tree_free();
+            zio_walk_parents();
+          }
+        }
+      }
+    }
+  }

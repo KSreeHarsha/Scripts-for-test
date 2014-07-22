@@ -1,0 +1,171 @@
+  zio_execute() {
+    spa_get_dsl();
+    spa_is_initializing();
+    zio_vdev_io_done() {
+      zio_wait_for_children();
+      vdev_queue_io_done() {
+        vdev_queue_io_to_issue();
+      }
+      vdev_cache_write();
+      vdev_disk_io_done();
+    }
+    spa_get_dsl();
+    spa_is_initializing();
+    zio_vdev_io_assess() {
+      zio_wait_for_children();
+    }
+    spa_get_dsl();
+    spa_is_initializing();
+    zio_done() {
+      zio_wait_for_children();
+      zio_wait_for_children();
+      zio_wait_for_children();
+      zio_wait_for_children();
+      zio_pop_transforms();
+      vdev_stat_update();
+      zio_gang_tree_free();
+      vdev_queue_agg_io_done();
+      zio_walk_parents();
+      zio_walk_parents();
+      zio_remove_child();
+      spa_get_dsl();
+      spa_is_initializing();
+      zio_vdev_io_assess() {
+        zio_wait_for_children();
+        arc_write_physdone() {
+          dbuf_write_physdone() {
+            dmu_objset_pool();
+            dsl_pool_undirty_space();
+          }
+        }
+      }
+      spa_get_dsl();
+      spa_is_initializing();
+      zio_done() {
+        zio_wait_for_children();
+        zio_wait_for_children();
+        zio_wait_for_children();
+        zio_wait_for_children();
+        zio_pop_transforms();
+        vdev_stat_update();
+        zio_gang_tree_free();
+        vdev_mirror_child_done();
+        zio_walk_parents();
+        zio_walk_parents();
+        zio_remove_child();
+      }
+      zio_walk_parents();
+      zio_remove_child();
+      spa_get_dsl();
+      spa_is_initializing();
+      zio_vdev_io_assess() {
+        zio_wait_for_children();
+        arc_write_physdone() {
+          dbuf_write_physdone() {
+            dmu_objset_pool();
+            dsl_pool_undirty_space();
+          }
+        }
+      }
+      spa_get_dsl();
+      spa_is_initializing();
+      zio_done() {
+        zio_wait_for_children();
+        zio_wait_for_children();
+        zio_wait_for_children();
+        zio_wait_for_children();
+        zio_pop_transforms();
+        vdev_stat_update();
+        zio_gang_tree_free();
+        vdev_mirror_child_done();
+        zio_walk_parents();
+        zio_walk_parents();
+        zio_remove_child();
+      }
+      zio_walk_parents();
+      zio_remove_child();
+      spa_get_dsl();
+      spa_is_initializing();
+      zio_vdev_io_assess() {
+        zio_wait_for_children();
+        arc_write_physdone() {
+          dbuf_write_physdone() {
+            dmu_objset_pool();
+            dsl_pool_undirty_space();
+          }
+        }
+      }
+      spa_get_dsl();
+      spa_is_initializing();
+      zio_done() {
+        zio_wait_for_children();
+        zio_wait_for_children();
+        zio_wait_for_children();
+        zio_wait_for_children();
+        zio_pop_transforms();
+        vdev_stat_update();
+        zio_gang_tree_free();
+        vdev_mirror_child_done();
+        zio_walk_parents();
+        zio_walk_parents();
+        zio_remove_child();
+      }
+    }
+  }
+        }
+        zio_walk_parents();
+        zio_remove_child();
+      }
+      zio_walk_parents();
+      zio_remove_child();
+      spa_get_dsl();
+      spa_is_initializing();
+      zio_vdev_io_assess() {
+        zio_wait_for_children();
+        arc_write_physdone() {
+          dbuf_write_physdone() {
+            dmu_objset_pool() {
+              spa_get_dsl();
+            }
+            dsl_pool_undirty_space();
+          }
+        }
+      }
+      spa_get_dsl();
+      spa_is_initializing();
+      zio_done() {
+        zio_wait_for_children();
+        zio_wait_for_children();
+        zio_wait_for_children();
+        zio_wait_for_children();
+        zio_pop_transforms();
+        vdev_stat_update();
+        zio_gang_tree_free();
+        vdev_mirror_child_done();
+        zio_walk_parents();
+        zio_walk_parents();
+        zio_remove_child();
+      }
+      zio_walk_parents();
+      zio_remove_child();
+      spa_get_dsl();
+      spa_is_initializing();
+      zio_vdev_io_assess() {
+        zio_wait_for_children();
+        arc_write_physdone() {
+          dbuf_write_physdone() {
+            dmu_objset_pool() {
+              spa_get_dsl();
+            }
+            dsl_pool_undirty_space();
+          }
+        }
+      }
+      spa_get_dsl();
+      spa_is_initializing();
+      zio_done() {
+        zio_wait_for_children() {
+      }
+      zio_remove_child();
+    }
+  }
